@@ -1,0 +1,67 @@
+\section{Funktionsfolgen und -reihen}
+\subsection{Grenzfunktion und gleichmäßige Konvergenz}
+Sei die Funktionsfolge $f_n$ definiert durch
+\begin{displaymath}
+  f_n : \mathbb{R} \to \mathbb{R} \text{ mit } f_n(x)=
+  \begin{cases}
+    1        & \text{für } x < 0\\
+    \cos(nx) & \text{für } 0 \leq x \leq \frac{\pi}{n}\\
+    -1       &\text{für} x > \frac{\pi}{n} 
+  \end{cases}
+\end{displaymath}
+Berechnen Sie die punktweise Grenzfunktion und bestimmen Sie, ob die Funktionsfolge auch gleichmäßig konvergiert.\\
+Idee: Fallunterscheidung $x < 0$, $x = 0$ und $x > 0$ (betrachte hier, dass $\frac{\pi}{n}$ eine Nullfolge ist), Stetigkeit der Funktionen prüfen.\\
+Lösung: $f(x) = \begin{cases} 1 & \text{für } x \leq 0\\ -1 & \text{für } x > 0\end{cases}$ und keine gleichmäßige Konvergenz.
+
+Untersuchen Sie die Funktionsfolge $f_n : \mathbb{R} \to \mathbb{R}, f_n(x) = n \cdot \sin\left(\frac{x}{n}\right)$ auf punktweise und gleichmäßige Konvergenz.\\
+Idee: Fallunterscheidung $x = 0$ und $x \neq 0$ (hier umformen auf $\frac{\sin(y)}{y} \xrightarrow{y \to \infty}$ 1).
+Betrachte Folge $x_n = n\pi$ und die Differenz beider Funktionen (oder, dass $f$ nicht beschränkt ist)\\
+Lösung: Punktweise konvergent mit $f : \mathbb{R} \to \mathbb{R}, f(x) = x$. Nicht gleichmäßig konvergent.
+
+Für $n \in \mathbb{N}$ betrachten wir die Funktion
+\begin{displaymath}
+  f_n: [0,1] \to \mathbb{R}; x \mapsto n^2x(1-x)^n.
+\end{displaymath}
+Zeigen Sie, dass die Folge $f_n$ auf ganz $[0,1]$ punktweise gegen $f : [0,1] \to \mathbb{R}$ konvergiert und bestimmen Sie die Grenzfunktion.
+Konvergiert die Reihe $f_n$ sogar gleichmäßig auf $[0,1]$?\\
+Idee: Nutze $\lim_{n \to \infty} n^m \cdot q^n = 0$ mit $q \in [0,1)$. Und teste die Folge $x_n = \frac{1}{n}$.\\
+Lösung: $f(x) = 0$ und $f_n$ konvergiert nicht gleichmäßig
+
+Betrachten Sie die Funktionsfolge $f_n:[0,1] \to \mathbb{R}$ definiert durch
+\begin{displaymath}
+  f(x) := 
+  \begin{cases}
+    2nx,& \text{falls } x \in [0,\frac{1}{2n}),\\
+    2 - 2nx,& \text{falls } x \in [\frac{1}{2n}, \frac{1}{n}],\\
+    0,& \text{falls } x \in (\frac{1}{n}, 1].
+  \end{cases}
+\end{displaymath}
+Prüfen Sie die Funktionsfolge auf punktweise und gleichmäßige Konvergenz.\\
+Idee: Fallunterscheidung $x = 0$, $x \neq 0$ (hier gilt $\frac{1}{n} < x$ für ffa $n \in \mathbb{N}$.
+Betrachte die Folge $x_n = \frac{1}{2n}$.\\
+Lösung: $f(x) = 0$ und keine gleichmäßige Konvergenz.
+
+Konvergiert die Funktionenreihe $\sum_{k = 1}^{\infty} \frac{4 \sin(kx)}{k^2}$ gleichmäßig auf $\mathbb{R}$?\\
+Idee: Folge abschätzen. Zeigen, dass die abgeschätzte Reihe konvergiert. $\implies$ Kriterium von Weierstraß\\
+Lösung: Ja
+
+Untersuchen Sie die Funktionenfolge $f_n$ definiert durch
+\begin{displaymath}
+  f_n : \mathbb{R} \to \mathbb{R}, f_n(x) := \cos\left(\frac{x}{n}\right)
+\end{displaymath}
+auf punktweise und gleichmäßige Konvergenz.\\
+Idee: Stetigkeit des Kosinus, betrachte $x_n = \frac{\pi n}{2}$\\
+Lösung: $f(x) = 0$ und nicht gleichmäßig Konvergenz.
+
+\subsection{Wahr oder Falsch?}
+Für alle $n \in \mathbb{N}$ seien $f_n : [0, \infty) \to \mathbb{R}$ stetige Funktionen und es gelte $f_n \xrightarrow{n \to \infty} f$ gleichmäßig auf $[0,\infty)$. Dann ist $f$ stetig.\\
+Wahr.\\
+Satz aus der VL.
+
+Wenn $x_n$ divergiert, so divergiert auch $(f(x_n))_{n \in \mathbb{N}}$.\\
+Falsch.\\
+Betrachte $f(x) = \frac{1}{x}$.
+
+Sei $I \subseteq \mathbb{R}$ ein Intervall, seien $f_n, f, g : I \to \mathbb{R}$ Funktionen und sei $g$ beschränkt.
+Falls $f_n \to f$ gleichmäßig auf $I$ für $n \to \infty$, dann gilt $f_n \cdot g \to f \cdot g$ gleichmäßig auf $I$ für $n \to \infty$.\\
+Wahr.

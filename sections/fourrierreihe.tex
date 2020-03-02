@@ -1,0 +1,29 @@
+\section{Fourierreihen}
+Berechnen Sie die Fourierkoeffizienten der folgenden $2\pi$-periodischen Funktion, die auf $[\pi, \pi]$ gegeben ist durch:
+\begin{displaymath}
+  f(t) =
+  \begin{cases}
+    1 - |t|& \text{für } |t| < 1\\
+    0& \text{für } 1 \leq |t| \leq \pi
+  \end{cases}
+\end{displaymath}
+Idee: $f$ ist gerade\\
+Lösung: $a_0 = \frac{1}{\pi}$, $a_n = \frac{2}{\pi n^2}(-\cos(n) + 1)$, $b_n = 0$
+
+Sei $f : \mathbb{R} \to \mathbb{R}$ eine $2\pi$-periodische Funktion, die auf $[\pi, \pi)$ gegebn ist durch
+\begin{displaymath}
+  f(x) =
+  \begin{cases}
+    -x,& x \in [-\pi,0)\\
+    0,& x \in [0,\pi).
+  \end{cases}
+\end{displaymath}
+Berechnen Sie die reelle Fourierreihe $s_f$ von $f$.
+In welchen Punkten $x \in \mathbb{R}$ gilt $s_f(x) = f(x)$?\\
+Idee: Koeffizienten mithilfe der Formel bestimmen\\
+Lösung: $a_0 = \frac{\pi}{2}$, $a_n = \frac{1}{n^2 \pi}(-1 + (-1)^n)$, $b_n = \frac{(-1)^n}{n}$.
+Es gilt $s_f(x) = f(x) \iff f \text{ ist stetig in } x \iff x \in \{(2k+1)\}$
+
+Bestimmen Sie die Fourierkoeffizienten der Funktion $f : [-\pi, \pi) \to \mathbb{R}$, $f(x) := \cos\left(\frac{1}{2}x\right)$, welche $2\pi$-periodisch auf ganz $R$ fortgesetzt werden.
+Idee: $f$ gerade, doppelte partielle Integration\\
+Lösung: $a_k = \frac{1}{\pi} \cdot \frac{4(-1)^k}{1-4k^2}$, $b_k = 0$

@@ -1,0 +1,81 @@
+\section{Unendliche Reihen}
+\subsection{Reihenwerte}
+\begin{displaymath}
+  \sum_{k = 0}^{\infty} \frac{(-1)^k}{2^k} = \frac{2}{3}
+\end{displaymath}
+Idee: Potenzgesetz anwenden und als geometrische Reihe auffassen.
+
+\begin{displaymath}
+  \sum_{k = 1}^{\infty} \left(\frac{1}{k+1}-\frac{1}{k}\right) = -1
+\end{displaymath}
+Idee: Teleskopsumme
+
+\begin{displaymath}
+  \sum_{k = 0}^{\infty} \frac{(-1)^k}{3^k} = \frac{3}{4}
+\end{displaymath}
+Idee: Potenzgesetz anwenden und als geometrische Reihe auffassen.
+
+\begin{displaymath}
+  \sum_{n = 1}^{\infty} \frac{2^n}{3^{n+1}} = \frac{2}{3}
+\end{displaymath}
+Idee: Ausklammern, Index-Shift, geometrische Reihe
+
+\subsection{Wahr oder Falsch?}
+Sei $a_n$ eine beschränkte Folge reeller Zahlen.
+Falls $a_n \cdot a_{n+1} < 0$ für alle $n \in \mathbb{N}$, dann konvergiert $\sum\limits_{n = 1}^{\infty} a_n$.\\
+Falsch.\\
+Betrachte das Gegenbeispiel $a_n = (-1)^n$.
+
+Sei $a_n$ eine Folge mit $\sqrt[n]{|a_n|} < 1$ für alle $n \in \mathbb{N}$. Dann konvergiert die Reihe $\sum\limits_{n = 1}^{\infty} a_n$.\\
+Falsch.\\
+Falsche Anwendung des Wurzelkriteriums. Der Limes Superior muss $< 1$ sein, nicht die Folgenglieder.
+
+Sind $a_n \in \mathbb{R}$, $n \in \mathbb{N}$, und gilt $|a_n| \leq \frac{1}{n}$ für alle $n \in \mathbb{N}$, dann ist die Reihe $\sum_{n = 1}^{\infty} (-1)^n a_n$ konvergent.\\
+Falsch.\\
+Betrachte $a_n := \left((-1)^n \frac{1}{n}\right)$. Die Folge erfüllt die Bedingung, aber $\sum_{n = 1}^{\infty} (-1)^n a_n = \sum_{n = 1}^{\infty} \frac{1}{n}$ ist divergent.
+
+Es gibt absolut konvergente Reihen, die nicht konvergieren.\\
+Falsch.\\
+Nach der VL gilt
+\begin{displaymath}
+  \sum_{n = 1}^{\infty} a_n \text{ ist absolut konvergent. } \implies \sum_{n = 1}^{\infty} a_n \text{ ist konvergent. }
+\end{displaymath}
+
+Es gibt konvergente Reihen $\sum_{n = 0}^{\infty} a_n$ derart, dass das Chauchy-Produkt der Reihe mit sich selbst divergiert.\\
+Wahr.\\
+Betrachte die Reihe $\sum_{k = 1}^{\infty} \frac{(-1)^{k+1}}{\sqrt{k}}$.
+Mit dem Leibniz-Kriterium folgt die Konvergenz.
+Das Chauchy-Produkt der Reihe mit sich selbst ist $\sum_{m = 1}^{\infty} c_m$ mit $c_m = (-1)^m \sum_{j = 1}^{m - 1} \frac{1}{\sqrt{j} \sqrt{m-j}}$.
+Da $|c_m| \geq 1$ für alle $m \geq 2$ ist $\sum_{m = 1}^{\infty} c_m$ also divergent.
+
+\subsection{Beziehungen}
+Sei $a_n$ eine reelle Folge.
+\begin{displaymath} 
+  \sum_{n = 1}^{\infty} a_n^2 \text{ konvergiert. } \fbox{\rule{1in}{0pt}\rule[-0.5ex]{0pt}{4ex}} \text{ } \sum_{n = 1}^{\infty} a_n \text{ konvergiert.}
+\end{displaymath}
+Antwort: keine Beziehung
+
+\begin{displaymath}
+  \sum_{n = 1}^{\infty} a_n^2 \text{ konvergiert. } \fbox{\rule{1in}{0pt}\rule[-0.5ex]{0pt}{4ex}} \text{ } \sum_{n = 1}^{\infty} a_n \text{ konvergiert absolut.}
+\end{displaymath}
+Antwort: $\Leftarrow$
+
+\begin{displaymath}
+  \sum_{n = 1}^{\infty} a_n \text{ konvergiert. } \fbox{\rule{1in}{0pt}\rule[-0.5ex]{0pt}{4ex}} \text{ } \limsup_{n \to \infty} \sqrt[n]{|a_n|} \leq 1
+\end{displaymath}
+Antwort: $\Rightarrow$
+
+\begin{displaymath}
+  \sum_{n = 1}^{\infty} a_n \text{ konvergiert absolut. } \fbox{\rule{1in}{0pt}\rule[-0.5ex]{0pt}{4ex}} \text{ } \limsup_{n \to \infty} \sqrt[n]{|a_n|} \leq 1
+\end{displaymath}
+Antwort: $\Rightarrow$
+
+\begin{displaymath}
+  \sum_{n = 1}^{\infty} a_n \text{ konvergiert absolut. } \fbox{\rule{1in}{0pt}\rule[-0.5ex]{0pt}{4ex}} \text{ } a_n \to 0 \text{ für } n \to \infty \text{.}
+\end{displaymath}
+Antwort: $\Rightarrow$
+
+\begin{displaymath}
+  a_n \to 0 \text{ für } n \to \infty \text{.} \fbox{\rule{1in}{0pt}\rule[-0.5ex]{0pt}{4ex}} \text{ } a_n \text{ ist beschränkt.}
+\end{displaymath}
+Antwort: $\Rightarrow$

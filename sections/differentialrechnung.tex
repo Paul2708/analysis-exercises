@@ -1,0 +1,120 @@
+\section{Differentialrechnung}
+\subsection{Ungleichungen}
+\begin{displaymath}
+  x \log(x) - y \log(y) \leq (x - y)(1 + \log(x))
+\end{displaymath}
+Idee: MWS mit $f(x) = x \log(x)$, Abschätzung möglich, da $f'$ monoton wachsend ist
+
+Zeigen Sie, dass $f : [1, \infty) \to \mathbb{R}, f(x) = \log(x)$ Lipschitz-stetig ist.\\
+Idee: MWS anwenden für $x, y \in [1, \infty), x < y, \xi \in (x,y), f(x) = \log(x)$\\
+Lösung: $L = 1$
+
+Sei $f:[1, \infty) \to \mathbb{R}, f(x) = \log(x)$.
+Zeigen Sie:
+\begin{displaymath}
+  1 = \min\{L \in \mathbb{R}: |f(x) - f(y)| \leq L|x-y|, (x,y \in [1,\infty))\}
+\end{displaymath}
+Idee: Widerspruchsbeweis: $\alpha = \min\{\dots\}$ und $x,y \to 1$ laufen lassen
+
+Zeigen Sie für alle $x,y \in \mathbb{R}$:
+\begin{displaymath}
+  |\cos(x)\sin^4(x) - \cos(y)\sin^4(y)| \leq 5|x-y|
+\end{displaymath}
+Idee: MWS für $f(x) = \cos(x)\sin^4(x)$ und Ableitung abschätzen
+
+Zeigen Sie, dass $f(x) = \sin^2(x)$ $(x \in \mathbb{R})$ Lipschitz-stetig ist.\\
+Idee: MWS mit $f(x) = \sin^2(x)$\\
+Lösung: $L = 2$
+
+Zeigen Sie:
+\begin{displaymath}
+  |\cos(e^x) - \cos(e^y)| \leq |x-y|
+\end{displaymath}
+für $x,y \leq 0$.\\
+Idee: MWS mit $f(x) = \cos(e^x)$ und $f'(x) \leq 1$ zeigen
+
+Sei $x > 0$.
+Zeigen Sie mithilfe des Mittelwertsatzes
+\begin{displaymath}
+  \frac{1}{2\sqrt{x + 1}} \leq \sqrt{x + 1} - \sqrt{x} \leq \frac{1}{2\sqrt{x}}.
+\end{displaymath}
+Idee: MWS mit $f(t) = \sqrt{t}$ auf dem Intervall $(x, x+1)$
+
+\subsection{Ableitungen}
+Sei $f(x) = x^x$ für $x \in (0,\infty)$.
+Bestimmen Sie $f'(e)$.\\
+Idee: $a = e^{\log(a)}$\\
+Lösung: $2e^e$
+
+Berechnen Sie die Ableitung der Funktion $g(x) = x^{\sin(x)}$ für $x \in (0,\infty)$.\\
+Lösung: $g'(x) = x^{\sin(x)} \left(\cos(x)\log(x) + \frac{\sin(x)}{x}\right)$
+
+Sei $f : (-\infty, 0) \to \mathbb{R}$; $f(x) = e^{\log(-x) + - \sqrt{1 + x^2}}$.
+Berechnen Sie $f'(-1)$.\\
+Lösung: $f'(-1) = e^{-\sqrt{2}}\left(\frac{1}{\sqrt{2}} - 1\right)$
+
+Die Funktion $f:(0,\infty) \to \mathbb{R}$ sei gegeben durch $f(x) := x^{(x^2)}$.
+Berechnen Sie für $x > 0$ die Ableitung $f'(x)$.\\
+Lösung: $f'(x) = x^{(x^2 + 1)} (2\log(x) + 1)$
+
+\subsection{Differenzierbarkeit prüfen}
+Untersuchen Sie die Funktion
+\begin{displaymath}
+  f:\mathbb{R} \to \mathbb{R}, f(x) :=
+  \begin{cases}
+    \sin(x)\cos\left(\frac{1}{x}\right),& x \neq 0,\\
+    0,& x = 0
+  \end{cases}
+\end{displaymath}
+in jedem Punkt $x \in \mathbb{R}$ auf Differenzierbarkeit.
+Beweisen Sie Ihre Aussagen.\\
+Idee: Komposition von differenzierbaren Funktionen. Zeigen, dass der GW nicht existiert\\
+Lösung: Nur für $x \neq 0$ differenzierbar.
+
+\subsection{Umkehrfunktion}
+Sei $f: [0,\infty) \to [0,\infty)$ definiert durch $f(x) = (x^2 + x)\sqrt{x}$.
+Zeigen Sie, dass $f$ bijektiv ist und berechnen Sie $(f^{-1})'(2)$.\\
+Idee:
+\begin{enumerate}
+    \item $f$ ist als Komposition diff'barer Funktionen wieder diff'bar
+    \item Ableitung $> 0$ zeigen, also ist $f$ streng monoton wachsend
+    \item Damit (und da $f$ stetig ist), folgt $f$ ist injektiv
+    \item Mit $f(0) = 0$ und $f(x) \to \infty (x \to \infty)$ folgt mit dem ZWS, dass $f([0,\infty)) = [0,\infty)$, also surjektiv ist.
+    \item Damit folgt die Bijektivität.
+    \item Mit $f(1) = 2$ folgt $(f^{-1})'(2) = \frac{1}{f'(1)} = \frac{1}{4}$
+\end{enumerate}
+
+\subsection{Wahr oder Falsch?}
+Sei $\emptyset \neq D \subseteq \mathbb{R}$ offen und $f:D \to \mathbb{R}$ differenzierbar mit $f'(x) = 0$ für alle $x \in D$. 
+Dann existiert ein $c \in \mathbb{R}$ mit $f'(x) = c$ für alle $x \in D$.\\
+$D$ ist kein Intervall, sondern eine offene Menge.
+
+Aus $g(x) \leq f(x)$ für alle $x \in \mathbb{R}$ folgt $g'(x) \leq f'(x)$ für alle $x \in \mathbb{R}$.\\
+Falsch.
+
+Sei $f: \mathbb{R} \to \mathbb{R}$ differenzierbar und streng monoton wachsend. $\implies$ $f'(x) > 0$ $(x \in \mathbb{R})$.\\
+Falsch.\\
+Gegenbeispiel: $f(x) = x^3$
+
+Seien $f,g$ differenzierbar.
+Ferner sei $f'(x) > 0$ und $g'(x) < 0$ für alle $x \in \mathbb{R}$.
+Dann ist $f \circ g$ streng monoton fallend.\\
+Wahr.\\
+Bew.: Kettenregel
+
+Es sei $f \in C([0,1])$.
+Dann ist $f$ differenzierbar in $(0,1)$.\\
+Falsch.\\
+Begründung: Nur die Rückrichtung gilt.
+
+\subsection{Beziehungen}
+Es sei $f: \mathbb{R} \to \mathbb{R}$ eine Funktion.
+\begin{displaymath}
+  f \text{ ist differenzierbar. } \fbox{\rule{1in}{0pt}\rule[-0.5ex]{0pt}{4ex}} \text{ $f$ ist stetig.}
+\end{displaymath}
+Lösung: $\Rightarrow$
+
+\begin{displaymath}
+  f \text{ ist differenzierbar. } \fbox{\rule{1in}{0pt}\rule[-0.5ex]{0pt}{4ex}} \text{ $f$ ist Lipschitz-stetig.}
+\end{displaymath}
+Lösung: keine Beziehung

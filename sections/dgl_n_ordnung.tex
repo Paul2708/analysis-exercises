@@ -1,0 +1,155 @@
+\section{Lineare Differentialgleichungen $n$-ter Ordnung mit konstanten Koeffizienten}
+Partikuläre Lösungsansätze sind unter \url{https://www-user.tu-chemnitz.de/~peju/skripte/gdgl/Merkblatt_PL.pdf} zu finden.
+Gute Videos mit Beispielen unter \url{https://www.youtube.com/channel/UCbE3PU7rYtS1PkmVmm6CfpA}
+
+\subsection{Homogene DGL}
+Aufgabe:
+\begin{displaymath}
+  y^{(iv)}(x) - 3y''(x) + 2y'(x) = 0
+\end{displaymath}
+Lösung:
+\begin{displaymath}
+  y(x) = a + (bx + c)e^x + de^{-2x} \quad (a, \dots, d \in \mathbb{R})
+\end{displaymath}
+
+Geben Sie das reelle Fundamentalsystem $y_1, y_2 : \mathbb{R} \to \mathbb{R}$ von
+\begin{displaymath}
+  y''(x) - y(x) = 0
+\end{displaymath}
+an, welches $y_1(0) = y_2(0)$ und $y_1'(0) = -y_2'(0) = 1$ erfüllt.\\
+Lösung:
+\begin{displaymath}
+  y_1 = e^x, \quad y_2 = e^{-x}
+\end{displaymath}
+
+Die allgemeine reelle Lösung der Differentialgleichung $y''(x) + 4y'(x) + 4y(x) = 0$ lautet?
+\begin{displaymath}
+  y(x) = (Ax + B) e^{-2x} \quad (A,B \in \mathbb{R}).
+\end{displaymath}
+
+\subsection{Inhomogene DGL}
+Aufgabe:
+\begin{displaymath}
+  y''(x) - 2y'(x) + 17y(x) = 17x^2 + x
+\end{displaymath}
+Homogene Lösung:
+\begin{align*}
+  \cp_y(\lambda) &= \lambda^2 - 2\lambda + 17\\
+  \implies \lambda_{1/2} &= 1 \pm 4i\\
+  \implies y_h &= e^x(a \cos(4x) + b \sin(4x))
+\end{align*}
+Mit der Ansatzfunktion $y_p = cx^2 + dx + e$ folgt mittels Koeffizientenvergleich:
+\begin{displaymath}
+  c = 1, \quad d = \frac{5}{17}, \quad e = -\frac{24}{289}
+\end{displaymath}
+Dadurch ergibt sich die allgemeine Lösung
+\begin{displaymath}
+  y(x) = e^x(a \cos(4x) + b \sin(4x)) + x^2 + \frac{5}{14}x - \frac{24}{289} \quad (a,b \in \mathbb{R}).
+\end{displaymath}
+
+Lösen Sie das folgende Anfangswertproblem und geben Sie ein offenes Intervall $I \subseteq \mathbb{R}$ an, auf dem die Lösung definiert ist.
+\begin{displaymath}
+  y'' - 5y' + 4y = e^{2x}, \quad y(0) = 1, \quad y'(0) = -1
+\end{displaymath}
+Homogene Lösung:
+\begin{align*}
+  \cp_y(\lambda) &= (\lambda - 4)(\lambda - 1)\\
+  \implies \lambda_1 &= 4, \quad \lambda_2 = 1\\
+  \implies y_h &= c_1 e^{4x} + c_2 e^{x}
+\end{align*}
+Mit der Ansatzfunktion $y_p = Ce^{2x}$ folgt mittels Koeffizientenvergleich:
+\begin{displaymath}
+  C = -\frac{1}{2}
+\end{displaymath}
+Dadurch ergibt sich die allgemeine Lösung
+\begin{displaymath}
+  y(x) = c_1 e^{4x} + c_2 e^{x} - \frac{1}{2}e^{2x}.
+\end{displaymath}
+Mit den Anfangswerten folgt weiter $c_1 = -\frac{1}{2}$ und $c_2 = 2$, also
+\begin{displaymath}
+  y(x) = -\frac{1}{2} e^{4x} + 2 e^{x} - \frac{1}{2}e^{2x} \quad (I = \mathbb{R}).
+\end{displaymath}
+
+Berechnen Sie die allgemeine Lösung der Differentialgleichung
+\begin{displaymath}
+  2y''(x) - y'(x) = \sin(x).
+\end{displaymath}
+Homogene Lösung:
+\begin{align*}
+  \cp_y(\lambda) &= \lambda(2\lambda - 1)\\
+  \implies \lambda_1 &= 0, \quad \lambda_2 = \frac{1}{2}\\
+  \implies y_h &= c_1 + c_2 e^{\frac{1}{2} x}
+\end{align*}
+Mit der Ansatzfunktion $y_p = a \cos(x) + b\sin(x)$ folgt mittels Koeffizientenvergleich:
+\begin{displaymath}
+  a = \frac{1}{5}, \quad b = -\frac{2}{5}
+\end{displaymath}
+Dadurch ergibt sich die allgemeine Lösung
+\begin{displaymath}
+  y(x) = c_1 + c_2 e^{\frac{1}{2} x} + \frac{1}{5}\cos(x) - \frac{2}{5}\sin(x) \quad (c_1, c_2 \in \mathbb{R}).
+\end{displaymath}
+
+Berechnen Sie die allgemeine Lösung der Differentialgleichung
+\begin{displaymath}
+  -y''(x) + 4y'(x) - 4y(x) = 169 \sin(3x). 
+\end{displaymath}
+Homogene Lösung:
+\begin{align*}
+  \cp_y(\lambda) &= -(\lambda - 2)^2\\
+  \implies \lambda_1 &= 2\\
+  \implies y_h &= (c_1 x + c_1)e^{2x}
+\end{align*}
+Mit der Ansatzfunktion $y_p = A\sin(3x) + B\cos(3x)$ folgt mittels Koeffizientenvergleich:
+\begin{displaymath}
+  A = 5, \quad b = -12
+\end{displaymath}
+Dadurch ergibt sich die allgemeine Lösung
+\begin{displaymath}
+  y(x) = (c_1 x + c_2)e^{2x} + 5\sin(3x) - 12\cos(3x) \quad (c_1, c_2 \in \mathbb{R}).
+\end{displaymath}
+
+Bestimmen Sie die allgemeine reelle Lösung der folgenden Differentialgleichung.
+\begin{displaymath}
+  y'''(x) + y(x) = 1 + x^2
+\end{displaymath}
+Homogene Lösung:
+\begin{align*}
+  \cp_y(\lambda) &= \lambda^3 + 1\\
+  \implies \lambda_1 &= 1, \quad \lambda_{2,3} = e^{\pm i \frac{\pi}{3}} = \cos\left(\frac{\pi}{3}\right) \pm i \sin\left(\frac{\pi}{3}\right) = \frac{1}{2} \pm i \frac{\sqrt{3}}{2}\\
+  \implies y_h &= C_1 e^{-x} + e^{\frac{1}{2} x} (C_2 \cos\left(\frac{\sqrt{3}}{2}x\right) + C_3 \sin\left(\frac{\sqrt{3}}{2}x\right))
+\end{align*}
+Mit der Ansatzfunktion $y_p = A + Bx + Cx^2$ folgt mittels Koeffizientenvergleich:
+\begin{displaymath}
+  A = 1, \quad B = 0, \quad C = 1.
+\end{displaymath}
+Dadurch ergibt sich die allgemeine Lösung
+\begin{displaymath}
+  y(x) = C_1 e^{-x} + e^{\frac{1}{2} x} (C_2 \cos\left(\frac{\sqrt{3}}{2}x\right) + C_3 \sin\left(\frac{\sqrt{3}}{2}x\right)) + 1 + x^2 \quad (C_1, C_2, C_3 \in \mathbb{R}).
+\end{displaymath}
+
+Bestimmen Sie die allgemeine reelle Lösung der folgenden Differentialgleichung.
+\begin{displaymath}
+  y''(x) + 4y'(x) + 4y(x) = xe^{-2x}.
+\end{displaymath}
+Homogene Lösung:
+\begin{align*}
+  \cp_y(\lambda) &= (\lambda + 2)^2\\
+  \implies \lambda_1 &= -2\\
+  \implies y_h &= (Ax + B)e^{-2x}
+\end{align*}
+Mit der Ansatzfunktion $y_p = x^2(ax + b)e^{-2x}$ folgt mittels Koeffizientenvergleich:
+\begin{displaymath}
+  a = \frac{1}{6}, \quad b = 0.
+\end{displaymath}
+Dadurch ergibt sich die allgemeine Lösung
+\begin{displaymath}
+  y(x) = (Ax + B) e^{-2x} + \frac{x^3}{6}e^{-2x} \quad (A,B,x \in \mathbb{R}).
+\end{displaymath}
+
+\subsection{Wahr oder Falsch?}
+Sei $a \in \mathbb{R}$ und seien $y_1, y_2 : \mathbb{R} \to \mathbb{R}$ Lösungen der Differentialgleichung $y'' + ay = 0$.
+Dann ist auch $y_1 + y_2$ eine Lösung der Differentialgleichung.\\
+Wahr.
+
+Die Funktionen $e^x, e^{-x}, e^{-2x}$ bilden ein Fundamentalsystem von $y'' + 3y' + 2y = 0$.\\
+Falsch.

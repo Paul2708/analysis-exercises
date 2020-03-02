@@ -1,0 +1,142 @@
+\section{Integration imm $\mathbb{R}^n$}
+\subsection{Kreisfläche}
+Es sei $B:= \{(x,y) \in \mathbb{R}^2 : x^2 + y^2 \leq e - 1\}$.
+Dann gilt
+\begin{displaymath}
+  \int_{B} \frac{1}{1 + x^2 + y^2}d(x,y) = \pi
+\end{displaymath}
+Lösung:
+Durch einen Übergang in Polarkoordinaten ergibt sich
+\begin{displaymath}
+  \int_{B} \frac{1}{1 + x^2 + y^2} d(x,y) = \int_{0}^{2\pi} \int_{0}^{\sqrt{e - 1}} \frac{r}{1 + r^2} drd\varphi = 2\pi \frac{1}{2}[\log(1 + r^2)]_{0}^{\sqrt{e-1}} = \pi \log(e) - 0 = \pi.
+\end{displaymath}
+
+Es sei $B = \{(x,y) \in \mathbb{R}^2 : x,y \geq 0, x^2 + y^2 \leq 1\}$.
+Berechnen Sie
+\begin{displaymath}
+  \int_B \frac{2}{x^2 + y^2 + 1} \diff (x,y).
+\end{displaymath}
+Lösung:
+Der Übergang in Polarkoordinaten liefert
+\begin{displaymath}
+  \int_B \frac{2}{x^2 + y^2 + 1} \diff (x,y) = \int_0^{\frac{\pi}{2}} \int_0^1 \frac{2r}{r^2 + 1} \diff r \diff \varphi = \dots = \frac{\pi \log 2}{2}.
+\end{displaymath}
+
+Es se $M := \{(x,y) \in \mathbb{R}^2 : x^2 + y^2 \leq 2, |x| > y\}$.
+Berechnen Sie
+\begin{displaymath}
+  \int_M (x^2 + y^2) \diff (x,y).
+\end{displaymath}
+Der Übergang in Polarkoordinaten liefert
+\begin{displaymath}
+  \int_M (x^2 + y^2) \diff (x,y) = \int_{-\frac{5}{4}\pi}^{\frac{1}{4} \pi} \int_0^{\sqrt{2}} r^2 \cdot r \diff r \diff \varphi = \dots = \frac{3}{2} \pi.
+\end{displaymath}
+
+Das Volumen der Menge $B := \{(x,y,z) \in \mathbb{R}^3 : 0 \leq z \leq \pi, x^2 + y^2 \leq \sin^2(z)\}$.
+\begin{displaymath}
+  |B| = \int_0^{\pi} \int_0^{2\pi} \int_0^{\sin(z)} r \diff r \diff \varphi \diff z = \dots \text{ partielle Integration } \dots = \frac{\pi^2}{2}.
+\end{displaymath}
+
+\subsection{Satz von Fubini}
+Sei $B := \{(x,y,z) \in \mathbb{R}^3 : 0 \leq x \leq 1, x^2 \leq y \leq \sqrt{x}, 0 \leq z \leq 1\}$.
+Berechnen Sie das folgende Integral:
+\begin{displaymath}
+  \int_B (xyz) d(x,y,z)
+\end{displaymath}
+Lösung:
+\begin{displaymath}
+  \int_B (xyz) d(x,y,z) = \int_0^1 \int_0^1 \int_{x^2}^{\sqrt{x}} (xyz) \diff y \diff x \diff z = \dots = \frac{1}{24}.
+\end{displaymath}
+
+Sei $D = \{(x,y) \in \mathbb{R}^2 : y \in [0,2], y \leq x \leq y^2 + 1\}$.
+Berechnen Sie den Flächeninhalt $|D|$.
+\begin{displaymath}
+  |D| = \int_D 1 \diff (x,y) = \int_0^2 \int_y^{y^2 + 1} 1 \diff x \diff y = \frac{8}{3}.
+\end{displaymath}
+
+Sei $C := [0,1] \times [0,2]$.
+\begin{displaymath}
+  \int_C (y - \sin(x)) \diff(x,y) = \int_0^1 \int_0^2 (y - \sin(x)) \diff y \diff x = \dots = 2 \cos(1)
+\end{displaymath}
+
+\begin{displaymath}
+  \int_{[0,1]^2} (xy + y^2) \diff(x,y) = \int_0^1 \int_0^1 (xy + y^2) \diff y \diff x = \dots = \frac{7}{12}
+\end{displaymath}
+
+\subsection{Normalbereich und Cavalieri}
+Es sei $M := \{(x,y) \in \mathbb{R}^2 : x^2 \geq y \geq 2x^2 - 4, y \geq 0\}$.
+\begin{displaymath}
+  \int_M 1 \diff (x,y) = \int_0^2 \int_{2x^2 - 4}^{x^2} 1 \diff x \diff y = \frac{16}{3}
+\end{displaymath}
+
+Es sei $\triangle \subseteq \mathbb{R}^2$ das Dreieck mit den Ecken $(0,0), (1,0)$ und $(0,1)$.
+Berechnen Sie
+\begin{displaymath}
+  \int_{\triangle} x^2e^y \diff (x,y) = \int_0^1 \int_0^{1 - x} x^2 e^y \diff y \diff x = \dots = 2e - \frac{16}{3}.
+\end{displaymath}
+Hinweis: partielle Integration
+
+Es sei $B := \{(x,y) \in \mathbb{R}^2 : x^2 - 2x \leq y \leq x\}$.
+Berechnen Sie $\vol(B)$.\\
+Lösung:
+\begin{displaymath}
+  \vol(B) = \int_B 1 \diff(x,y) = \int_0^3 \int_{x^2 - 2x}^{x} 1 \diff y \diff x = \dots = \frac{9}{2}.
+\end{displaymath}
+
+Es sei $B = \{(x,y) \in \mathbb{R}^2 : x \geq 0, \frac{1}{4}x^2 - 1 < y < 2 - x\}$
+Dann gilt
+\begin{displaymath}
+  \int_B 1 \diff(x,y) = \int_0^2 \int_{\frac{1}{4}x^2 - 1}^{2 - x} 1 \diff y \diff x = \dots = \frac{10}{3}.
+\end{displaymath}
+
+\subsection{Wahr oder Falsch?}
+Das Volumen der Einheitskugel im $\mathbb{R}^3$ beträgt $\frac{4\pi}{3}$.\\
+Wahr.
+
+Sei $g \in C[0,1]$ und $Q$ der durch
+\begin{displaymath}
+  Q := \{(x,y,z) \in \mathbb{R}^3 : y^2 + z^2 \leq g^2(x), x \in [0,1]\}
+\end{displaymath}
+definierte Rotationskörper.
+Dann ist das Volumen von $Q$ gegeben durch $|Q| = \pi \int_{0}^{1} g^2(x)dx$.\\
+Wahr.
+
+Sei $D = \{(x,y,z) \in \mathbb{R}^3 : z \in [0,1], x^2 + y^2 \leq 1\}$.
+Dann gilt mit Zylinderkoordinaten:
+\begin{displaymath}
+  \int_D (x^2 + y^2)e^x d(x,y,z) = \int_0^1 \int_0^{2\pi} \int_0^1 r^2 e^z \diff r \diff \varphi \diff z
+\end{displaymath}
+Falsch.
+
+Sei $f : [0,3]^2 \to [-2,2]$ stetig.
+Dann gilt:
+\begin{displaymath}
+  |\int_{[0,3]^2} f(x) \diff x | \leq 18
+\end{displaymath}
+Wahr.
+
+Sei $f : [0,1] \times [0,1] \to \mathbb{R}$ stetig.
+Dann gilt
+\begin{displaymath}
+  \int_0^1 \int_0^y f(x,y) \diff x \diff y = \int_0^1 \int_0^x f(x,y) \diff y \diff x.
+\end{displaymath}
+Falsch.
+
+Sei $a < b$, seien $f,g : [a,b] \to \mathbb{R}$ stetig mit $f(x) \leq g(x)$ für alle $x \in [a,b]$ und sei $A \subseteq \mathbb{R}^2$ gegeben durch
+\begin{displaymath}
+  A := \{(x,y) \in [a,b] \times \mathbb{R} : f(x) \leq y \leq g(x)\}.
+\end{displaymath}
+Der Flächeninhalt von $A$ berechnet sich gemäß der Formel
+\begin{displaymath}
+  |A| = \int_a^b g(x) \diff x - \int_a^b f(x) \diff x.
+\end{displaymath}
+Wahr.
+
+\subsection{Beziehungen}
+Es sei $f : [0,1]^2 \to \mathop{R}$ stetig.
+\begin{displaymath}
+  f(x,y) \geq 0 \quad ((x,y) \in [0,1]^2).
+  \quad \fbox{\rule{1in}{0pt}\rule[-0.5ex]{0pt}{4ex}} \quad
+  \int_{[0,1]^2} f(x,y) \diff (x,y) \geq 0.
+\end{displaymath}
+Antwort: $\implies$
