@@ -1,0 +1,4 @@
+# LaTeX
+build/
+*.pdf
+*.synctex.gz
