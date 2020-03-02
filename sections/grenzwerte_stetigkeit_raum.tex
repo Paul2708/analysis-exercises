@@ -1,0 +1,76 @@
+\subsection{Grenzwerte}
+\subsubsection{Definition}
+Es sei $n \geq 1$, $D \subseteq \mathbb{R}^n$ und $f : D \to \mathbb{R}$ eine Funktion.
+Weiter sei $x_0 \in \mathbb{R}^n$ ein Häufungspunkt von $D$.
+Geben Sie die Definition für den Grenzwert $\lim_{x \to x_0} f(x)$.\\
+Lösung:
+$f(x) \to a$ für $x \to x_0$ genau dann, wenn für jede Folge $(x_n)_{n = 1}^{\infty}$ aus $D \setminus x_0$ mit der Eigenschaft $x_n \to x_0$ $(n \to \infty)$ gilt:
+$f(x_n) \to a$ $(n \to \infty)$ im Sinne von Folgen in $\mathbb{R}$.
+
+\subsubsection{Grenzwerte bestimmen}
+\begin{displaymath}
+  \lim_{(x,y) \to (0,0} \frac{\sin(xy)}{xy} = 1
+\end{displaymath}
+Idee: $\lim_{t \to 0} \frac{\sin(t)}{t} = 1$ (?)
+
+\begin{displaymath}
+  \lim_{(x,y) \to (0,0} \frac{y^3}{x^2 + y^2} = 0
+\end{displaymath}
+
+\begin{displaymath}
+  \lim_{(x,y) \to (1,1)} \frac{\sqrt{x^3y + 4 - x^2} - 2}{xy - 1} = \frac{1}{4}
+\end{displaymath}
+Idee: Setzte $x = 1$ und löse mit l'Hospital
+
+\begin{displaymath}
+  \lim_{(x,y) \to (0,2)} \frac{\sin(xy)}{3x} = \frac{2}{3}
+\end{displaymath}
+Idee: Setzte $y = 2$ ein und löse mit l'Hospital
+
+\begin{displaymath}
+  \lim_{(x,y) \to (0,0)} \frac{x^2(y + 2)}{e^{x^2} - 1} = 2
+\end{displaymath}
+Idee: Setzte $y = 0$ ein und löse mit l'Hospital
+
+\begin{displaymath}
+  \lim_{(x,y,z) \to (0,0,0)} \frac{x^2 y^2}{\sqrt{x^2 + y^2 + z^2}} = 0
+\end{displaymath}
+Idee:
+\begin{displaymath}
+  0 \leq \frac{x^2 y^2}{\sqrt{x^2 + y^2 + z^2}}
+  \begin{cases}
+    = 0,& \text{falls } x = 0,\\
+    \leq \frac{x^2 y^2}{\sqrt{x^2}},& \text{ falls } x \neq 0
+  \end{cases}
+  \leq |x|y^2 \xrightarrow{(x,y) \to (0,1)} 0
+\end{displaymath}
+
+\begin{displaymath}
+  \lim_{(x,y) \to (0,1)} f(x,y) = 0
+\end{displaymath}
+mit $f : \{(x,y) \in \mathbb{R}^2: x \neq 0 \neq y\} \to \mathbb{R}$, $f(x,y) = x \log |xy|$\\
+Idee:
+\begin{displaymath}
+  0 \leq |f(x,y)| = \frac{1}{|y|} ||xy| \log |xy|| \xrightarrow{(x,y) \to (0,1)} 0
+\end{displaymath}
+mit $\lim_{t \to 0^+} t\log(t) = 0$
+
+\begin{displaymath}
+  \lim_{(x,y,z) \to (0,0,0)} \frac{xyz^2}{\sqrt{x^8 + y^8 + z^8}} \text{ existiert nicht}
+\end{displaymath}
+Idee: Betrachte die Folge $\left(\frac{1}{n}, \frac{1}{n}, \frac{1}{n}\right)$ und $\left(\frac{1}{n}, \frac{1}{n}, \frac{2}{n}\right)$
+
+\begin{displaymath}
+  \lim_{(x,y) \to (0,0)} \frac{\sin((x-1)y)}{y} = -1
+\end{displaymath}
+Idee: Nutze $\lim_{t \to 0} \frac{\sin t}{t} = 1$
+
+\begin{displaymath}
+  \lim_{(x,y) \to (0,0)} \frac{\sin(2xy) + x^2y}{xy} = 2
+\end{displaymath}
+Idee: $\lim_{t \to 0} \frac{\sin(t)}{t} = 1$
+
+\begin{displaymath}
+  \lim_{(x,y) \to (0,0)} \frac{\sin(x)y^2}{x^3 + y^3} \text{ existiert nicht}
+\end{displaymath}
+Idee: $\frac{\sin(x)y^2}{x^3 + y^3} = \frac{\sin(x)}{x} \cdot \frac{xy^2}{x^3 + y^3}$ und betrachte dann $(x_n, x_n)$, $(0, x_n)$.

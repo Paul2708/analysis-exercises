@@ -1,0 +1,263 @@
+\section{Differentialrechnung im $\mathbb{R}^n$ (vektorwertige Funktionen)}
+\subsection{Ableitungen}
+Bestimme $f'(x,y)$ für $f : \mathbb{R}^2 \to \mathbb{R}^3$ mit $f(x,y) = (2 + x \cos y, e^{x^2 - y^2}, y^3 x)$.
+\begin{displaymath}
+  f'(x,y) = 
+  \begin{pmatrix}
+    \cos y & -x \sin y\\
+    2x e^{x^2 - y^2} & -2y e^{x^2 - y^2}\\
+    y^3 & 3xy^2
+  \end{pmatrix}
+\end{displaymath}
+
+Bestimme $f'(x,y)$ für $f : \mathbb{R}^2 \to \mathbb{R}^3$ mit $f(x,y) = (x + y, xy\cos(y^2), y^3)$.
+\begin{displaymath}
+  f'(x,y) = 
+  \begin{pmatrix}
+    1 & 1\\
+    y\cos(y^2) & x(\cos(y^2) - 2y^2\sin(y^2))\\
+    0 & 3y^2
+  \end{pmatrix}
+\end{displaymath}
+
+Berechnen Sie die Jacobi-Matrix der Funktion $f(x,y) = (x^3y, 1 - \cos(y), \sin(x)e^y)$.
+\begin{displaymath}
+  f'(x,y) =
+  \begin{pmatrix}
+    3x^2y & x^3\\
+    0 & \sin(y)\\
+    \cos(x)e^y & \sin(x)e^y
+  \end{pmatrix}
+\end{displaymath}
+
+Berechen Sie die Ableitung (falls sie existiert) für $g : \mathbb{R}^3 \to \mathbb{R}^2$ mit $g(x,y,z) = (z \cos(xy^2), e^x + y \log(z^2 + 1))$.
+\begin{displaymath}
+  g'(x,y,z) = 
+  \begin{pmatrix}
+    -y^2z \sin(xy^2) & -2xyz \sin(xy^2) & \cos(xy^2)\\
+    e^x & \log(z^2 + 1) & \frac{2zy}{z^2 + 1}
+  \end{pmatrix}
+\end{displaymath}
+
+Berechnen Sie die Jacobi-Matrix der Funktion
+\begin{displaymath}
+  f(x,y,z) = (x^2 + \sin(y) + z, \cos(x) - y + z^2)
+\end{displaymath}
+\begin{displaymath}
+  f'(x,y,z) =
+  \begin{pmatrix}
+    2x & \cos(y) & 1\\
+    -\sin(x) & -1 & 2z
+  \end{pmatrix}
+\end{displaymath}
+
+Es sei $f : \mathbb{R}^3 \to \mathbb{R}^2$, $f(x,y,z) := (e^{xy}z, \sin(z) + x + y)$.
+\begin{displaymath}
+  f'(x,y,z) =
+  \begin{pmatrix}
+    e^{xy}yz & e^{xy}xz & e^{xy}\\
+    1 & 1 & \cos(z)
+  \end{pmatrix}
+\end{displaymath}
+
+\subsection{Implizit definierte Funktionen}
+Sei $f : \mathbb{R}^3 \to \mathbb{R}$ definiert durch
+\begin{displaymath}
+  f(x,y,z) = z^3 + 2z^2 - 3xyz + x^3 - y^3.
+\end{displaymath}
+\begin{enumerate}
+    \item Zeigen Sie, dass eine Umgebung $U \subseteq \mathbb{R}^2$ des Punktes $(0,0)$ und eine Umgebung $V \subseteq \mathbb{R}$ des Punktes $-2$ exisitert, sowie genau eine $C^1$-Funktion $g : U \to V$ mit $g(0,0) = -2$ und $f(x,y,g(x,y)) = 0$ für alle $(x,y) \in U$.
+    \item Berechnen Sie $g'(0,0)$.
+    \item Zeigen Sie, dass $f$ surjektiv ist.
+\end{enumerate}
+Lösung:
+\begin{enumerate}
+    \item $f$ ist offenbar stetig partiell differenzierbar auf $\mathbb{R}^3$.
+    Weiter gilt:
+    \begin{align*}
+      f(0,0,-2) = 0 &\quad \checkmark\\
+      f_z(0,0,-2) = \frac{\partial f}{\partial z} (0,0,-2) = 4 \neq 0 &\quad \checkmark.
+    \end{align*}
+    Damit ist der Satz über implizit definierte Funktionen anwendbar.
+    \item Für $x,y \in U$ gilt:
+    \begin{displaymath}
+      g'(x,y) = -\left(\frac{\partial f}{\partial z} (x,y,g(x,y))\right)^{-1} \cdot \frac{\partial f}{\partial (x,y)} (x,y,g(x,y))
+    \end{displaymath}
+    Daraus folgt: $g'(0,0) = (0,0)$
+    \item Sei $h(z) := f(0,0,z) = z^3 + 2z^2$. Mit $\lim_{z \to \infty} h(z) = \infty$ und $\lim_{z \to -\infty} h(z) = -\infty$ und der Stetigkeit von $h : \mathbb{R} \to \mathbb{R}$ folgt mit dem Zwischenwertsatz $h(\mathbb{R}) = \mathbb{R}$.
+    Und daher folgt:
+    \begin{displaymath}
+      \mathbb{R} = h(\mathbb{R}) \subseteq f(\mathbb{R}^3) \subseteq \mathbb{R} \implies f(\mathbb{R}^3) = \mathbb{R} \implies f \text{ surjektiv}
+    \end{displaymath}
+\end{enumerate}
+
+Beweisen Sie:
+Es existiert eine Umgebung $U$ des Punktes $(0,0)$, so dass das Gleichungssystem
+\begin{displaymath}
+  \begin{cases}
+    e^{2x + y} - \cos(xy) &= s\\
+    e^x - \cos(x + y) &= t
+  \end{cases}
+\end{displaymath}
+für jeden Punkt $(s,t) \in U$ eine eindeutige Lösung $x := x(s,t)$, $y := y(s,t)$ mit $x(0,0) = 0$ und $y(0,0) = 0$ besitzt.\\
+\textit{Hinweis}: Betrachten Sie die Funktion $f : \mathbb{R}^4 \to \mathbb{R}^2$,
+\begin{displaymath}
+  f(s,t,x,y) = (e^{2x + y} - \cos(xy) - s, e^{x} - \cos(x + y) - t).
+\end{displaymath}
+Lösung:
+$f$ ist offensichtlich stetig partiell differenzierbar auf $\mathbb{R}^4$. (\checkmark)
+Es gilt $f(0,0,0,0) = (0,0)$. (\checkmark)
+\begin{displaymath}
+  \frac{\partial f}{\partial (x,y)} (s,t,x,y) =
+  \begin{pmatrix}
+    2e^{2x + y} + \sin(xy)y & e^{2x+y} + \sin(xy)x\\
+    e^x + \sin(x + y) & \sin(x + y)
+  \end{pmatrix}
+\end{displaymath}
+Also
+\begin{displaymath}
+  \frac{\partial f}{\partial (x,y)} (0,0,0,0) =
+  \begin{pmatrix}
+    2 & 1\\
+    1 & 0
+  \end{pmatrix}
+  \implies \det = -1 \neq 0 \implies \text{invertierbar} (\checkmark)
+\end{displaymath}
+Nach dem Satz über implizit definierte Funktionen existieren Umgebungen $U$ von $(0,0)$ und $V$ von $(0,0)$ sowie eine eindeutig bestimmte $C^1$-Funktion $g : U \to V$ mit $g(0,0) = (0,0)$ und $f(s,t,g(s,t)) = (0,0)$ für alle $(s,t) \in U$.
+Setzt man $g(s,t) = (x(s,t), y(s,t))$ so gilt $f(s,t,x(s,t), y(s,t)) = (0,0)$ genau dann, wenn $(x(s,t), y(s,t))$ für gegebenes $(s,t) \in U$ das Gleichungssystem löst.
+
+Es sei $y : \mathbb{R} \to \mathbb{R}$ definiert durch $x = y(x) - \frac{1}{2} \sin(y(x))$.
+Berechnen Sie $y'(0)$.\\
+Lösung: 
+$y(0)$ löst die Gleichung $0 = y(0) - \frac{1}{2}\sin(y(0))$, also $y(0) = 0$.
+Mit dem Satz über implizit definierte Funktionen folgt daher:
+\begin{displaymath}
+  y'(0) = \frac{1}{(y(0))'} = \frac{1}{1 - \frac{1}{2} \cos(y(0))} = 2.
+\end{displaymath}
+
+\subsection{Umkehrsatz}
+Sei $g : \mathbb{R}^2 \to \mathbb{R}^2$ gegeben durch $g(x,y) = (x^2 - y^3, x^4 + y)$.
+Bestimmen Sie die Menge $A$ aller Punkte $(x_0, y_0) \in \mathbb{R}^2$, so dass $g$ in einer Umgebung von $(x_0, y_0)$ invertierbar ist.\\
+Lösung:
+\begin{displaymath}
+  A = \{(x_0, y_0) \in \mathbb{R}^2 : x_0 \neq 0\}
+\end{displaymath}
+
+Die Funktion $f : (0, \infty) \times \mathbb{R} \to \mathbb{R}^2$ sei gegeben durch
+\begin{displaymath}
+  f(r, \varphi) := r^2 (\cos(\varphi), \sin(\varphi)).
+\end{displaymath}
+\begin{enumerate}
+    \item Zeigen Sie:
+    Es gibt eine Umgebung $U$ von $(2,0)$ und eine Umgebung $V$ von $(4,0)$ so, dass $U$ durch die Funktion $f$ bijektiv auf $V$ abgebildet wird.
+    Berechnen Sie die Ableitung der Umkehrfunktion $(f|_U)^{-1}$ in $(4,0)$.
+    \item Ist $f$ injektiv?
+    Begründen Sie ihre Antwort.
+\end{enumerate}
+Lösung:
+\begin{enumerate}
+    \item Der Umkehrsatz liefert die Behauptung, wenn folgende Bedingungen erfüllt werden:
+    \begin{itemize}
+        \item $f$ ist stetig differenzierbar.
+        \item $f(2,0) = (4,0)$
+        \item $f'(2,0)$ ist invertierbar
+    \end{itemize}
+    Weiter gilt
+    \begin{displaymath}
+      (f^{-1})'(4,0) = (f'(2,0))^{-1} = 
+      \begin{pmatrix}
+        \frac{1}{4} & 0\\
+        0 & \frac{1}{4}
+      \end{pmatrix}
+    \end{displaymath}
+    \item $f$ ist offensichtlich nicht injektiv, denn $f(r, \varphi) = f(r, \varphi + 2\pi)$
+\end{enumerate}
+
+Sei $f : \mathbb{R}^2 \to \mathbb{R}^2$ definiert durch
+\begin{displaymath}
+  f(x,y) = (e^{x + y}, y).
+\end{displaymath}
+\begin{enumerate}
+    \item Zeigen Sie:
+    Es gibt eine offene Umgebung $U$ von $(0,1)$ und eine offene Umgebung $V$ von $(e,1)$ so, dass $U$ durch die Funktion $f$ bijektiv auf $V$ abgebildet wird.
+    Berechnen Sie die Ableitung der Umkehrfunktion $(f|_U)^{-1} : V \to U$ im Punkt $(e,1)$.
+    \item Zeigen Sie, dass $f$ injektiv, aber nicht surjektiv ist.
+\end{enumerate}
+Lösung: 
+\begin{enumerate}
+    \item
+    \begin{itemize}
+        \item $f$ ist offensichtlicheine $C^1$-Funktion.
+        \item $f(0,1) = (e,1) \quad \checkmark$
+        \item $f'(0,1) = \begin{pmatrix} e & e\\ 0 & 1\end{pmatrix}$, also $\det f'(0,1) = e \neq 0 \quad \checkmark$
+    \end{itemize}
+    Also ist $f'(0,1)$ invertierbar und der Umkehrsatz findet Anwendung.
+    Weiter gilt:
+    \begin{displaymath}
+      (f^{-1})'(e, 1) = (f'(0,1))^{-1} =
+      \begin{pmatrix}
+        e^{-1} & -1\\
+        0 & 1
+     \end{pmatrix}
+    \end{displaymath}
+    \item Injektivität folgt aus der Injektivität der $e$-Funktion.
+    $f$ ist nicht surjektiv, da $(0,0)$ wegen $e^x > 0$ nicht getroffen wird.
+\end{enumerate}
+
+Sei $f : \mathbb{R}^3 \to \mathbb{R}^3$ definiert durch
+\begin{displaymath}
+  f(x,y,z) = \left(e^{x(y + z)}, e^{y(x + z)}, \frac{1}{2}(y^2 + 1)\right).
+\end{displaymath}
+Zeigen Sie, dass $f$ in einer Umgebung von $(0,1,0)$ invertierbar ist und berechnen Sie $(f^{-1})'(1,1,1)$.
+Ist $f : \mathbb{R}^3 \to \mathbb{R}^3$ injektiv?\\
+Lösung:
+\begin{itemize}
+    \item $f$ ist offensichtlich eine $C^1$-Funktion auf $\mathbb{R}^3. \quad \checkmark$
+    \item $f(0,1,0) = (1,1,1) \quad \checkmark$
+    \item $f'(0,1,0)$ ist invertierbar, denn
+    \begin{displaymath}
+      f'(0,1,0) = 
+      \begin{pmatrix}
+        1 & 0 & 0\\
+        1 & 0 & 1\\
+        0 & 1 & 0
+      \end{pmatrix}
+      \implies \det f'(0,1,0) = -1 \neq 0. \quad \checkmark
+    \end{displaymath}
+\end{itemize}
+Nach dem Umkehrsatz existieren Umgebungen $U,V \subset \mathbb{R}^3$ von $(0,1,0)$ bzw. $(1,1,1)$, so dass $f : U \to V$ bijektiv und somit invertierbar ist.
+Nach dem Umkehrsatz gilt:
+\begin{displaymath}
+  (f^{-1})'(1,1,1) = (f'(0,1,0))^{-1} =
+  \begin{pmatrix}
+    1 & 0 & 0\\
+    0 & 0 & 1\\
+    -1 & 1 & 0
+  \end{pmatrix}.
+\end{displaymath}
+$f$ ist nicht injektiv, da $f(0,1,0) = (1,1,1) = f(0,-1,0)$.
+
+\subsection{Wahr oder Falsch?}
+Sei $f : \mathbb{R}^2 \to \mathbb{R}^2$, $f(x,y) := (x^2y, (x-3)y^2)$.
+Dann existiert eine offene Umgebung $U$ von $(1,1)$ auf der $f$ injektiv ist.\\
+Wahr.
+
+Die Funktion $F : \mathbb{R}^3 \to \mathbb{R}$ gegeben durch $F(x,y,z) = z^3 + 2xy - 4xz + 2y - 1$.
+Es gibt eine offene Umgebung $U$ von $(1,1)$ und eine stetig differenzierbare Funktion $\varphi : U \to \mathbb{R}$ mit $F(x,y,\varphi(x,y)) = 0$ für alle $(x,y) \in U$ und mit $\varphi(1,1) = 1$.\\
+Wahr.
+
+Ist $\emptyset \neq D \subseteq \mathbb{R}^n$ offen und ist $f : D \to \mathbb{R}^n$ $(n \in \mathbb{N}$ mit $n \geq 2$) stetig partiell differenzierbar und ist $f'(x)$ für jeden Punkt $x \in \mathbb{R}^n$ invertierbar, so ist $f$ injektiv.\\
+Falsch.
+
+Sei $f \in C^1(\mathbb{R}^2, \mathbb{R}^2)$ und $\det(f'(x)) \neq 0$ $(x \in \mathbb{R}^2)$. $\quad \implies \quad$ $f$ ist injektiv auf $\mathbb{R}^2$.\\
+Falsch.
+
+Sei $f : (-1,1)^2 \to \mathbb{R}$ gegeb durch $f(x,y) = x^2 + \sin(y)$.
+Dann gibt es ein $\xi > 0$ und genau eine Funktion $g : (-\xi, \xi) \to \mathbb{R}$ mit $g(0) = 0$ und
+\begin{displaymath}
+  x^2 + \sin(g(x)) = 0 \quad (x \in (-\xi, \xi)).
+\end{displaymath}
+Wahr.
+
+Die Funktion $g : \mathbb{R}^n \setminus \{0\} \to \mathbb{R}^n$, $g(x) := \frac{x}{||x||}$ ist differenzierbar.\\
+Wahr.

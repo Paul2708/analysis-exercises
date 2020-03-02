@@ -1,0 +1,152 @@
+\section{Folgen}
+\subsection{Grenzwerte}
+\begin{displaymath}
+  \lim_{n \to \infty} {\sqrt{n^2 + n} - 3n} = - \infty
+\end{displaymath}
+Idee: 3. Binomische Formel
+
+\begin{displaymath}
+  \lim_{n \to \infty} \frac{(n+1)^n \cdot (2n+1)^3}{n^n} = 8e
+\end{displaymath}
+Idee: Ausdividieren und $\frac{a^n}{b^n} = \left( \frac{a}{b}\right) ^n$ ausnutzen.
+
+\begin{displaymath}
+  \lim_{n \to \infty} (\sqrt{3n-2} - \sqrt{3n+1}) = 0
+\end{displaymath}
+Idee: 3. Binomische Formel
+
+\begin{displaymath}
+  \lim_{n \to \infty} \left(1 + \frac{a}{b \cdot n + k}\right)^{cn} = e^{c \cdot \frac{a}{b}}
+\end{displaymath}
+Idee: Kein Plan. Ist aber so
+
+\begin{displaymath}
+  \liminf_{n \to \infty} \left(\left(1 + \frac{2}{n}\right)^n \cdot (-1)^n \right) = -e^2
+\end{displaymath}
+Idee: Haufüngswerte bestimmen oder Limes reinziehen
+
+\begin{displaymath}
+  \lim_{n \to \infty} \left(1 - \frac{1}{n^2}\right)^n = 1
+\end{displaymath}
+Idee: 3. Binomische Formel und Grenzwertsatz benutzen
+
+\subsection{Rekursive Folgen}
+Sei $a_1 := \frac{3}{2}$ und $a_{n+1} = \frac{3}{4-a_n}$.
+\begin{enumerate}
+    \item Zeigen Sie mit vollständiger Induktion $1 \leq a_{n+1} \leq a_n \leq \frac{3}{2}$.
+    \item Zeigen Sie, dass die Folge $a_n$ konvergiert und berechnen Sie ihren Grenzwert.
+\end{enumerate}
+
+Antwort:
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item Betrachte $1 \leq a_n \leq \frac{3}{2}$ und $a_{n+1} \leq a_n$.
+        \item Induktionsanfang ist klar.
+        \item Induktionsschritt mit $a_{n+1} = \frac{3}{4 - a_n}$ anfangen (bzw. $a_{n+2} = \frac{3}{4 - a_{n+1}}$) und IV einsetzen
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item Mit 1. folgt, dass die Folge monton fallend und beschränkt ist.
+        Daher konvergiert sie auch.
+        \item Für den Grenzwert $a := \lim_{n \to \infty} a_n$ gilt:
+        \begin{displaymath}
+          a = \frac{3}{4 - a}
+          \iff (a-3)(a-1) = 0
+          \iff a = 1.
+        \end{displaymath}
+    \end{enumerate}
+\end{enumerate}
+
+Sei $a \in (-1,1)$, $b \in \mathbb{R}$, $x_0 \in \mathbb{R}$ beliebig. Für $n \in \mathbb{N}_0$ definiere
+\begin{displaymath}
+  x_{n+1} := ax_n + b.
+\end{displaymath}
+Zeigen Sie:
+\begin{enumerate}
+    \item Es existiert genau ein $x \in \mathbb{R}$ mit $x = ax+b$. Bestimmen Sie dieses.
+    \item Für alle $n \in \mathbb{N}$ gilt $x_n - \frac{b}{1-a} = a^n\left(x_0 - \frac{b}{1-a}\right)$.
+    \item $\lim_{n \to \infty} x_n = \frac{b}{1-a}$.
+\end{enumerate}
+
+Antwort:
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item $x$ ausklammern, durch $1-a$ teilen.
+        \item Mit den Äquivalenzumformungen folgt die Eindeutigkeit und die Existenz.
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item Mithilfe vollständiger Induktion.
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item Benutze den Satz: $|a_n - a| \leq b_n$ und $b_n \to 0$, so gilt $a_n \to a$.
+        \item Betrachte $|x_n - \frac{b}{1-a}|$ und benutze die 2.
+        \item Mit $|a| < 1$ folgt die Behauptung.
+    \end{enumerate}
+\end{enumerate}
+
+\subsection{Wahr oder falsch?}
+Besitzt eine Folge reeller Zahlen genau einen Häufungspunkt in $\mathbb{R}$, so ist diese Folge konvergent.\\
+Falsch.\\
+Betrachte $a_n = (0,1,0,2,0,3,\dots)$. $0$ ist offensichtlich ein Häufungspunkt, $a_n$ ist aber nichtmals beschränkt.
+
+Seien $a_n$, $b_n$ beschränkte Folgen reeller Zahlen.
+\begin{displaymath}
+  \liminf_{n \to \infty} (a_n - b_n) = \liminf_{n \to \infty} a_n - \liminf_{n \to \infty} b_n
+\end{displaymath}
+Falsch.\\
+Gegenbeispiel: $a_n = 1$, $b_n = (-1)^n$ oder $a_n = (0,1,0,1,\dots)$, $b_n = (1,0,1,0,\dots)$.
+
+Sei $a_n$ monoton und nach oben beschränkt.
+Dann ist $a_n$ konvergent.\\
+Falsch.\\
+Die Folge kann auch monton fallend sein.
+
+Sei $a_n$ konvergent mit $a := \lim_{n \to \infty} a_n$.
+Dann konvergiert jede Teilfolge gegen $a$.\\
+Wahr.\\
+Bew.: $\varepsilon$-Umgebung
+
+Eine beschränkte Folge hat einen Häufungswert.\\
+Wahr.\\
+Bew.: Bolzano-Weierstraß.
+
+Jede reelle Zahlenfolge enthält eine monotone Teilfolge.\\
+Wahr.\\
+Bew.: Mit Indizes spielen und Definition von niedrig ($m$ heißt niedrig $\iff \forall n \geq m : a_n \geq a_m$).
+
+Sei $a_n$ eine beschränkte Folge.
+Dann hat $a_n$ eine monoton fallende Teilfolge.\\
+Falsch.\\
+Die Teilfolge kann auch monoton steigend sein.
+
+\subsection{Häufungswerte}
+Bestimmen Sie die Menge der Häufungswerte der Folge $a_n := e^{(-1)^{n}n-n} \sin\left(\frac{\pi n}{2}\right)$.\\
+Antwort:
+Für alle $k \in \mathbb{N}$ gilt:
+\begin{align*}
+  a_{2k} &= e^{(-1)^{2k}2k-2k}\sin\left(\frac{2k\pi}{2}\right) = e^0 \sin(k\pi) = 0\\
+  a_{2k+1} &= e^{(-1)^{2k+1}(2k+1)-(2k+1)}\sin\left(\frac{(2k+1)\pi}{2}\right) = e^{-4k-2} \sin\left(\frac{(2k+1)\pi}{2}\right) \to 0 (k \to \infty).
+\end{align*}
+Da $e^{-4k-2}$ gegen $0$ geht und der Sinus beschränkt ist.
+
+Bestimmen Sie die Menge der Häufungswerte der Folge $a_n := \frac{\left(1+\sin\left(\frac{\pi}{2}n\right)\right)^n}{2}$.\\
+Antwort: Für alle $k \in \mathbb{N}$ gilt:
+\begin{align*}
+  a_{2k} &= \frac{1}{2} \left(1+\sin\left(\frac{\pi}{2}2k\right)\right)^{2k} = \frac{1}{2} \left(1+\sin\left(\pi k\right)\right)^{2k} = \frac{1}{2} (1 + 0)^{2k} = \frac{1}{2}\\
+  a_{4k-1} &= \frac{1}{2} \left(1+\sin\left(\frac{\pi}{2}(4k-1)\right)\right)^{4k-1} = \frac{1}{2} (1 - 1)^{4k-1} = 0\\
+  a_{4k+1} &= \frac{1}{2} \left(1+\sin\left(\frac{\pi}{2}(4k+1)\right)\right)^{4k+1} = \frac{1}{2} (1 + 1)^{4k+1} \to \infty \text{ } (k \to \infty) 
+\end{align*}
+Beachte, dass jede Teilfolge betrachtet wurde.
+
+\subsection{Beziehungen}
+Sei $a_n$ eine Folge.
+\begin{displaymath}
+  a_n \to 0 \text{ für } n \to \infty \text{. } \fbox{\rule{1in}{0pt}\rule[-0.5ex]{0pt}{4ex}} \text{ $a_n$ ist beschränkt.}
+\end{displaymath}
+Mögliche Beziehungen:
+$\implies$, $\Leftarrow$, $\iff$, k.B.\\
+Antwort: $\implies$

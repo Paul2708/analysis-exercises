@@ -1,0 +1,33 @@
+\section{Konvergenz im $\mathbb{R}^n$}
+\textit{Keine konkreten Aufgaben dazu}
+
+\section{Grenzwerte bei Funktionen, Stetigkeit}
+\subsection{Stetigkeit}
+\subsubsection{Wahr oder Falsch?}
+Die Funktion $g : \mathbb{R}^2 \to \mathbb{R}$ mit
+\begin{displaymath}
+  g(x,y) =
+  \begin{cases}
+    \frac{xy}{x^2 + y^2}& (x,y) \neq (0,0)\\
+    0& (x,y) = (0,0)
+  \end{cases}
+\end{displaymath}
+ist stetig in $(0,0)$.\\
+Falsch.\\
+Begründung: $\left(\frac{1}{k}, \frac{1}{k}\right) \to 0$, aber $\left(\frac{1}{k}, \frac{1}{k}\right) = \frac{1}{2} \neq 0 = g(0,0)$
+
+Sei $f: \mathbb{R}^2 \to \mathbb{R}$ derart, dass für alle $y \in \mathbb{R}$ die Funktion $x \mapsto f(x,y)$ stetig ist und dass für alle $x \in \mathbb{R}$ die Funktion $y \mapsto f(x,y)$ stetig ist.
+Dann ist $f$ stetig auf $\mathbb{R}^2$.\\
+Falsch.
+
+Sei $A \subseteq \mathbb{R}^n$ beschränkt, $f : A \to \mathbb{R}$ sei stetig.
+Dann existiert $\min_{x \in A} f(x)$.\\
+Falsch.
+
+Die Funktion $f : \mathbb{R}^2 \setminus \{0\} \to \mathbb{R}$, $f(x,y) = \frac{xy}{x^2 + y^2}$ lässt sich stetig auf $\mathbb{R}^2$ fortsetzten.\\
+Falsch.\\
+Begründung: $\lim_{(x,y) \to (0,0)} f(x,y)$ existiert nicht, da $f\left(\frac{1}{k}, 0\right) = 0 \neq \frac{1}{2} = f\left(\frac{1}{k}, \frac{1}{k}\right)$
+
+Sei $f:D \to \mathbb{R}^n$ stetig und $D$ kompakt.
+Dann ist das Bild $f(D)$ kompakt.\\
+Wahr.

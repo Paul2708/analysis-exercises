@@ -1,0 +1,175 @@
+\section{Das Riemann-Integral}
+
+\subsection{Ableitungen}
+Berechnen Sie die Ableitung von
+\begin{displaymath}
+  g(x) = \int_{0}^{x^2} \left(\int_{0}^{t} \cos(t)e^s ds\right)dt.
+\end{displaymath}
+Idee: $g(x) = F(x^2) - F(0)$\\
+Lösung: $g'(x) = 2x \cos(x^2) \left(e^{x^2} - 1\right)$
+
+\subsection{Integrale ausrechnen}
+\begin{displaymath}
+  \int_{0}^{1} xe^{x + 1} = e
+\end{displaymath}
+Idee: $e$ rausziehen und partielle Integration mit $f' = e^x$ und $g = x$
+
+\begin{displaymath}            
+  \int_{1}^{\pi + 1} t\sin(t - 1)dt = \pi + 2                                   
+\end{displaymath}
+Idee: (Index-Shift), partielle Integration mit $f' = \sin(t - 1)$ und $g = t$
+
+\begin{displaymath}
+  \int_{1}^{\infty} \frac{\log^2(x)}{x^2} dx = 2
+\end{displaymath}
+Idee: Zwei mal partiell integieren mit $f' = \frac{1}{x^2}$ und $g = \log^2(x)$ oder substituiere $t := \log(x)$, also auch $x = e^t$
+
+\begin{displaymath}
+  \int_{0}^{1} x^{-\frac{1}{2}} dx = 2
+\end{displaymath}
+Idee: Grenzwert $\lim_{n \to 0+}$ und normal lösen
+
+\begin{displaymath}
+  \int_{0}^{1} x^3e^{x^2} dx = \frac{1}{2}
+\end{displaymath}
+Idee: Partielle Integration mit $f' = e^{x^2}2x$ und $g = \frac{1}{2}x^2$ oder substituiere $t := x^2$
+
+\begin{displaymath}
+  \int_{\frac{\pi}{2}}^{\pi} x \cdot \sin(x) dx = \pi - 1
+\end{displaymath}
+Idee: Partielle Integration mit $f' = \sin(x)$ und $g = x$
+
+\begin{displaymath}
+  \int_{-e}^{-1} \frac{1}{x} dx = -1
+\end{displaymath}
+Idee: Punktsymmetrie von $\frac{1}{x}$ bzw. Stammfunktion des $\log(\cdot)$ benutzen
+
+\begin{displaymath}
+  \int_{0}^{3\pi} x \sin(x) dx = 3\pi
+\end{displaymath}
+Idee: Partielle Integration mit $f' = \sin(x)$ und $g = x$
+
+\begin{displaymath}
+  \int_{e^4}^{\infty} \frac{1}{x[\log\sqrt{x}]^4}dx = \frac{1}{12}
+\end{displaymath}
+Idee: Substituiere $t := \log\sqrt{x}$ mit $dt = \frac{1}{2x}dx$ und bilde den Grenzwert
+
+\begin{displaymath}
+  \int_{1}^{\infty} \cos\left(\frac{1}{x}\right) \frac{1}{x^2} dx = \sin(1)
+\end{displaymath}
+Idee: Substituiere $t := \frac{1}{x}$ mit $dt = -\frac{1}{x^2}dx$
+
+\begin{displaymath}
+  \int_{0}^{\pi} \sin^2(x) e^x dx = \frac{2}{5} \left(e^{\pi} - 1\right)
+\end{displaymath}
+Idee: Zweifache partielle Integration mit $f' = e^x$, $g = \sin^2(x)$ und $f' = e^x$, $g = \sin(x)\cos(x)$ mit dem Wissen von $\cos^2(x) = 1 - \sin^2(x)$
+
+\begin{displaymath}
+  \int_{1}^{\infty} \frac{1}{x\sqrt{x - 1}} dx = \pi
+\end{displaymath}
+Idee: Substituiere $t := \sqrt{x - 1}$, also $x = t^2 + 1$ mit $dt = \frac{1}{2\sqrt{x - 1}}dx$ und $\left(\arctan(x)\right)' = \frac{1}{1 + x^2}$ und $\lim_{n \to \infty} \arctan(n) = \frac{\pi}{2}$
+
+\begin{displaymath}
+  \int_{-1}^{2} x^2 e^{x^3 + 1} dx = \frac{1}{3} \left(e^9 - 1\right)
+\end{displaymath}
+Idee: Substituiere $t := x^3$.
+
+\begin{displaymath}
+  \int_{1}^{e} x \log(x) dx = \frac{1}{4} \left(e^2 + 1\right)
+\end{displaymath}
+Idee: Partielle Integration mit $f' = x$ und $g = \log(x)$
+
+\begin{displaymath}
+  \int_{0}^{1} t \cdot \arctan(t) dt = \frac{\pi}{4} - \frac{1}{2}
+\end{displaymath}
+Idee: Partielle Integration mit $f' = t$ und $g = \arctan$ mit $\left(\frac{t^2 + 1}{2}\right)' = f$
+
+\begin{displaymath}
+  \int_{0}^{\infty} xe^{-tx} dx = \frac{1}{t^2}
+\end{displaymath}
+Idee: Partielle Substitution mit $f' = e^{-tx}$ und $g = x$. Grenzwertbetrachtung mit l'Hospital
+
+\subsection{Wahr oder Falsch?}
+Die Funktion
+\begin{displaymath}
+  f: (0,\infty) \to \mathbb{R}, f(x) = \int_{0}^{x} e^{-t^2}dt
+\end{displaymath}
+ist streng monoton wachsend.\\
+Wahr.\\
+Begründung: $e^{-t^2} > 0$
+
+Sei $f$ eine nicht Riemann-integrierbare Funktion auf $[a,b]$, $a,b \in \mathbb{R}$, $a < b$.
+Dann ist $f$ nicht stetig.\\
+Wahr.\\
+Begründung: Jede stetige Funktion ist auch integrierbar.
+
+Sei $f:[a,b] \to \mathbb{R}$ eine Riemann-integrierbar.
+Dann besitzt $f$ auch eine Stammfunktion.\\
+Falsch.\\
+Bemerkung im Skript.
+
+Das uneigentliche Riemann-Integral $\int_{0}^{\infty} f(x)dx$ existiere.
+Dann gilt $\lim\limits_{x \to \infty} f(x) = 0$.\\
+Falsch.\\
+
+Jede differenzierbare Funktion $f:[0,1] \to \mathbb{R}$ ist Riemann-integrierbar.\\
+Wahr.\\
+Beweis: Jede differenzierbare Funktion ist stetig und jede stetige Funktion ist riemann-integrierbar.
+
+Das Produkt zweier Riemann-integrierbaren Funktionen ist wieder Riemann-integrierbar.\\
+Wahr.\\
+Beweis: Satz aus der Vorlesung
+
+Sei $f: \mathbb{R} \to \mathbb{R}$ stetig und $a \in \mathbb{R}$.
+Dann gilt
+\begin{displaymath}
+  \lim_{\varepsilon \to 0} \int_{a}^{a + \varepsilon} f(x)dx = 0.
+\end{displaymath}
+Wahr.\\
+
+Sei $f : [0, \infty)\to [0,\infty)$ stetig und es gelte $\int_{0}^{x} f(t)dt \leq 100$ für alle $x \in [0, \infty)$.
+Dann ist $f$ uneigentlich Riemann-integrierbar auf $[0,\infty)$.
+Wahr.\\
+
+Sei $f_n$ eine Folge in $R([0,1])$ und $f_n$ konvergiert für $n \to \infty$ auf $[0,1]$ punktweise gegen $f: [0,1] \to \mathbb{R}$.
+Dann gilt
+\begin{displaymath}
+  \lim_{n \to \infty} \int_{0}^{1} f_n(x)dx = \int_{0}^{1} f(x)dx.
+\end{displaymath}
+Falsch.\\
+Begründung: Das gilt, falls $f_n$ gleichmäßig konvergiert (und nicht nur punktweise).
+
+Ist $f \in R([0,1])$, so besitzt $f$ eine Stammfunktion.\\
+Falsch.\\
+Bemerkung in der Vorlesung.
+
+Es sei $f \in C([0,1])$.
+Dann ist $f \in R([0,1])$.\\
+Wahr.\\
+Begründung: Jede stetige Funktion ist Riemann-integrierbar.
+
+Sind $f,g \in R([1,a])$ für alle $a > 1$ und gilt $0 \leq f(x) \leq g(x)$ für alle $x \in [1,\infty)$, dann gilt:
+\begin{displaymath}
+  \int_{1}^{\infty} f(x) dx \text{ divergent. } \implies \int_{1}^{\infty} g(x) dx \text{ divergent. }
+\end{displaymath}
+Wahr.
+
+Sind $f,g \in R([a,b])$ für $a,b \in \mathbb{R}$, $a < b$, und ist $f(x) \leq g(x)$ für alle $x \in [a,b]$, dann gilt:
+\begin{displaymath}
+  \int_{a}^{b} f(x) dx \leq \int_{a}^{b} g(x) dx.
+\end{displaymath}
+Wahr.
+
+Seien $a,b \in \mathbb{R}$, $a < b$ und $f \in C([a,b])$ und $f(x) \geq 0$.
+Dann gilt
+\begin{displaymath}
+  \int_{a}^{b} f(t) dt = 0 \implies f(x) = 0 \text{ für alle } x \in [a,b].
+\end{displaymath}
+Wahr.
+
+\subsection{Beziehungen}
+Es sei $f: \mathbb{R} \to \mathbb{R}$ eine Funktion.
+\begin{displaymath}
+  f \text{ ist stetig. } \fbox{\rule{1in}{0pt}\rule[-0.5ex]{0pt}{4ex}} \text{ $f$ besetzt eine Stammfunktion.}
+\end{displaymath}
+Lösung: $\Rightarrow$ (Hauptsatz der Differential- und Integralrechnung)

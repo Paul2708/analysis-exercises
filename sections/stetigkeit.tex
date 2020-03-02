@@ -1,0 +1,70 @@
+\section{Stetigkeit}
+\subsection{Lösung einer Gleichung}
+Zeigen Sie, dass die Gleichung
+\begin{displaymath}
+  (1+x^3)\sqrt{x} = 1
+\end{displaymath}
+genau eine Lösung $x > 0$ hat. \textit{Hinweis: Zwischenwertsatz und Monotonie.}\\
+Lösung: Eindeutigkeit: Produkt zweier streng monotonen Funktionen, die strikt positiv sind.
+Damit folgt die Injektivität.\\
+Existenz: Zwischenwertsatz für $[0,1]$.
+
+\subsection{Wahr oder Falsch?}
+Sei $x_n$ eine reelle Zahlenfolge und $f,g : \mathbb{R} \to \mathbb{R}$ Funktionen.\\
+Ist $f$ eine monoton fallende Funktion und $x_n$ monoton fallend, so ist $(f(x_n))_{n \in \mathbb{N}}$ monoton fallend.\\
+Falsch.\\
+Kein Gegenbeispiel gefunden :(.
+
+Für stetiges $f$ und $a > 0$ gibt es ein $x \in [-a,a]$ so, dass gilt: $f(x) = \sup\{f(y) : y \in [-a,a]\}$.\\
+Wahr.\\
+Folgt mit dem Zwischenwertsatz.
+
+Sei $f : \mathbb{R} \to \mathbb{R}$ beschränkt.
+Dann exisitert $\max_{x \in \mathbb{R}} f(x)$.\\
+Falsch.\\
+Gegenbeispiel: Betrachte beschränkte Funktion, die nur ein Supremum, aber kein Maximum bestizt.
+
+Ist $f \in C([a,b])$ und $f(a)f(b) < 0$, so existiert ein $x_0 \in [a,b]$, sodass $f(x_0) = 0$.\\
+Wahr.\\
+Nullstellensatz von Bolanzo.
+
+Ist $f : \mathbb{R} \to \mathbb{R}$ eine bijektive und streng monoton wachsende Funktion.
+Dann ist auch $f^{-1}$ streng monoton wachsend.\\
+Wahr.\\
+Bemerkung aus der Vorlesung.
+
+Eine Teilmenge von $\mathbb{R}$, die nicht offen ist, ist abgeschlossen.\\
+Falsch.\\
+Die Menge $(0,1]$ ist weder offen noch abgeschlossen.
+
+Seien $f,g \in C(\mathbb{R})$ gleichmäßig stetig.
+Dann ist $fg$ gleichmäßig stetig.\\
+Falsch.\\
+Wähle  $f,g \in \mathbb{R} \to \mathbb{R}, f(x) := x, g(x) := x$.
+Dann sind $f$ und $g$ gleichmäßig stetig auf $\mathbb{R}$, aber $(fg)(x) = x^2$, also ist $fg$ nach Vorlesung nicht gleichmäßig stetig auf $\mathbb{R}$.
+
+Es sei $f \in C([0,1])$. Dann ist $f$ gleichmäßig stetig auf $[0,1]$.\\
+Wahr.\\
+Satz aus der VL.
+
+Es sei $f \in C([0,1])$. Dann ist $f$ Lipschitz-stetig auf $[0,1]$.\\
+Wahr.\\
+$f(x) = \sqrt{x}$ ist auf $[0,1]$ stetig, aber nicht Lipschitz-stetig.
+
+\subsection{Beziehungen}
+Es sei $f : \mathbb{R} \to \mathbb{R}$ eine Funktion.
+
+\begin{displaymath}
+  f \text{ ist stetig. } \fbox{\rule{1in}{0pt}\rule[-0.5ex]{0pt}{4ex}} \text{ } f \text{ ist gleichmäßig stetig.}
+\end{displaymath}
+Antwort: $\Leftarrow$
+
+\begin{displaymath}
+  f \text{ ist Lipschitz-stetig. } \fbox{\rule{1in}{0pt}\rule[-0.5ex]{0pt}{4ex}} \text{ } f \text{ ist gleichmäßig stetig.}
+\end{displaymath}
+Antwort: $\Rightarrow$
+
+\begin{displaymath}
+  f \text{ ist gleichmäßig stetig. } \fbox{\rule{1in}{0pt}\rule[-0.5ex]{0pt}{4ex}} \text{ } f \text{ ist beschränkt.}
+\end{displaymath}
+Antwort: k.B.

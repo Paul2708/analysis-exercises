@@ -1,0 +1,215 @@
+\section{Differentialgleichungen 1. Ordnung}
+\subsection{Anfangswertprobleme}
+Die Lösung des Anfangswertproblems $y'(x) - 2y(x) = 4$, $y(0) = 6$ auf $[0,\infty)$ lautet?\\
+Lösung:
+\begin{align*}
+  y_h &= c e^{2x}\\
+  y_p &= -2\\
+  \implies y(x) &= ce^{2x} - 2
+\end{align*}
+Das AWP liefert $c = 8$, also
+\begin{displaymath}
+  y(x) = 8e^{2x} - 2
+\end{displaymath}
+
+Lösen Sie das Anfangswertproblem 
+\begin{displaymath}
+  y'(x) = 2x \cos(x^2)y(x) + xe^{\sin(x^2)}, \quad y(0) = 1.
+\end{displaymath}
+Lösung:
+\begin{align*}
+  y_h &= ce^{\int 2x\cos(x^2) \diff x} \overset{\text{Substitution}}{=} ce^{\sin(x^2)}\\
+  y_p &= \frac{1}{2} e^{\sin(x^2)} x^2\\
+  \implies y(x) &= e^{\sin(x^2)} \left(c + \frac{x^2}{2}\right)
+\end{align*}
+Das AWP liefert $c = 1$, also
+\begin{displaymath}
+  y(x) = e^{\sin(x^2)} \left(1 + \frac{x^2}{2}\right)
+\end{displaymath}
+
+Lösen Sie die Differentialgleichung $xy(x)^2 \cdot (xy'(x) + y(x)) = 1$ auf einem geeigneten Interval.\\
+\textit{Hinweis:}
+Verwenden Sie die Substitution $u(x) = x \cdot y(x)$.\\
+Lösung:
+Die Gleichung mit $x$ multiplizieren ergibt
+\begin{displaymath}
+  x^2 y^2 (xy'(x) + y(x)) = x
+\end{displaymath}
+Mit der Substitution und Trennung der Variablen folgt
+\begin{align*}
+  u^2(x) \cdot u'(x) &= x\\
+  u^2(x) \cdot \frac{\diff u}{\diff x} &= x\\
+  \frac{1}{3} u^3(x)& = \frac{3}{2} x^2\\
+  u^3(x) &= \frac{3}{2}x^3 + C\\
+  u(x) &= \sqrt[3]{\frac{3}{2} x^2 + C}.
+\end{align*}
+Durch rücksubstituieren folgt die allgemeine Lösung
+\begin{displaymath}
+  y(x) = \frac{1}{x} \sqrt[3]{\frac{3}{2} x^2 + C}.
+\end{displaymath}
+
+Lösen Sie das Anfangswertproblem
+\begin{displaymath}
+  y'(x) = -2x(1 + x^2)y^3(x), \quad y(0) = 1,
+\end{displaymath}
+in einer offenen Umgebung von $0$.\\
+Lösung:
+Mit der Trennung der Variablen folgt
+\begin{align*}
+  \frac{1}{y^3(x)} \diff y &= -2x(1 + x^2) \diff x\\
+  -\frac{1}{2y^2(x)} &= -\frac{1}{2} x^4 + x^2 + C\\
+  |y(x)| &= \sqrt{\frac{1}{x^4 - 2x^2 + C}}.
+\end{align*}
+Mit dem Anfangswert folgt $C = 1$, also ergibt sich die allgemeine Lösung
+\begin{displaymath}
+  y(x) = \frac{1}{x^2 + 1}.
+\end{displaymath}
+
+Lösen Sie das Anfangswertproblem auf $(1, \infty)$:
+\begin{displaymath}
+  y'(x) = \frac{1}{1 - x} y(x) + x - 1, \quad y(2) = 0.
+\end{displaymath}
+Lösung:
+\begin{align*}
+  y_h &= ce^{- \log(x - 1)} = \frac{c}{x - 1}\\
+  y_p &= \frac{1}{x - 1} \cdot \int -(x - 1)^2 \diff x = \frac{(x - 1)^2}{3}\\
+  \implies y(x) &= \frac{c}{x - 1} + \frac{(x-1)^2}{3}.
+\end{align*}
+Mit dem Anfangswert folgt $c = -\frac{1}{3}$, also ist die allgemeine Lösung
+\begin{displaymath}
+  y(x) = -\frac{1}{3}\left(\frac{1}{x - 1} - (x - 1)^2\right).
+\end{displaymath}
+
+Lösen Sie das Anfangswertproblem
+\begin{displaymath}
+  (1 - x)y(x)^2 = x^2 y'(x), \quad y(1) = \frac{1}{2}
+\end{displaymath}
+auf einem geeigneten Intervall.\\
+Lösung: Trennung der Variablen eribt
+\begin{displaymath}
+  y(x) = \frac{1}{\frac{1}{x} + \log(x) - C}
+\end{displaymath}
+Der Anfangswert liefert $C = -1$, also folgt damit die allgemeine Lösung
+\begin{displaymath}
+  y(x) = \frac{1}{\frac{1}{x} + \log(x) + 1} \quad (x \in (0, \infty)).
+\end{displaymath}
+
+Geben Sie die Lösung des folgenden Anfangswertproblems an:
+\begin{displaymath}
+  \begin{cases}
+    y'(x) &= xy(x), \quad y : [0,\infty) \to \mathbb{R}\\
+    y(0) &= 1.
+  \end{cases}
+\end{displaymath}
+Lösung:
+Es gilt
+\begin{displaymath}
+  y(x) = y_h = e^{\int x \diff x} = e^{\frac{1}{2} x^2}.  
+\end{displaymath}
+
+Lösen Sie das folgende Anfangswertproblem und geben Sie ein offenes Interval $I \subseteq \mathbb{R}$ an, auf dem die Lösung definiert ist.
+\begin{displaymath}
+  y' = -\frac{x}{y}, \quad y(0) = \sqrt{2}.
+\end{displaymath}
+Lösung:
+Mit der Trennung der Variblen folgt
+\begin{align*}
+  \frac{\diff y}{\diff x} &= -\frac{x}{y}\\
+  \frac{1}{2}y^2 &= -\frac{1}{2} x^2 + C\\
+  y(x) &= \pm \sqrt{2C - x^2}.
+\end{align*}
+Mit der Anfangsbedingung folgt $C = 1$ und es ist die positive Wurzel zu nehmen.
+Damit folgt die allgemeine Lösung
+\begin{displaymath}
+  y(x) = \sqrt{2 - x^2} \text{ auf dem Intervall } I = (-\sqrt{2}, \sqrt{2}).
+\end{displaymath}
+
+Lösem Sie das folgende Anfangswertproblem auf $[1, \infty)$.
+\begin{displaymath}
+  y'(x)(1 + x^2) \sinh(y(x)) = 2x \cosh(y(x)). \quad y(1) = 1.
+\end{displaymath}
+Lösung: Mit der Trennung der Variablen folgt
+\begin{displaymath}
+  \frac{\sinh(y)}{\cosh(y)} \diff y = \frac{2x}{(1 + x^2)} \diff x.
+\end{displaymath}
+Beide Seiten lassen sich mithilfe einer Substitution integrieren.
+\begin{displaymath}
+  \log(\cosh(y)) = \log(1 + x^2) + C
+\end{displaymath}
+Mit der Injektivität der Logarithmus-Funktion folgt daher
+\begin{displaymath}
+  \cosh(y) = C(1 + x^2).
+\end{displaymath}
+Mit dem Anfangswert folgt $C = \frac{1}{2} \cosh(1) = \frac{1}{4}\left(e + \frac{1}{e}\right)$.
+Daher lautet die allgemeine Lösung
+\begin{displaymath}
+  y(x) = \text{arcosh}\left(\frac{1}{4}(e + \frac{1}{e})(1 + x^2)\right).
+\end{displaymath}
+
+Lösen Sie das Anfangswertproblem 
+\begin{displaymath}
+  y'(x) = -\frac{x^3}{y^5}, \quad y(0) = 1
+\end{displaymath}
+in einer geeigneten Umgebung von 0.\\
+Lösung: 
+Mit der Trennung der Variablen und anschließender Integration gilt
+\begin{displaymath}
+  y(x) = \pm \sqrt[6]{C - \frac{3}{2}x^4}.
+\end{displaymath}
+Mit dem Anfangswert ergibt sich $C = 1$ und die positive Wurzel:
+\begin{displaymath}
+  y(x) = \sqrt[6]{1 - \frac{3}{2}x^4}.
+\end{displaymath}
+Jede Umgebung mit $B_r(0)$ mit $r < \sqrt[4]{\frac{2}{3}}$ eignet sich als ``geeignete Umgebung von 0.''
+
+Lösen Sie die folgenden Anfangswertprobleme auf geeigneten Intervallen:
+\begin{enumerate}
+    \item $y'(x) = \frac{x - 2}{x} y(x) + \frac{2}{x}e^x, \quad y(1) = -e$
+    \item $y'(x) = 12x^2(1 - x) \tan(y(x)), \quad y(0) = \frac{\pi}{4}$.
+\end{enumerate}
+Lösungen:
+\begin{enumerate}
+    \item 
+    \begin{align*}
+      y_h &= ce^{x - 2\log(x)} = ce^x x^{-2}\\
+      y_p &= \dots = e^x\\
+      \implies y(x) &= c\frac{e^x}{x^2} + e^x.
+    \end{align*}
+    Der Anfangswert liefert $c = -2$, somit ergibt sich die Lösung
+\begin{displaymath}
+  y(x) = e^x - 2\frac{2}{x^2}e^x.
+\end{displaymath}
+  \item
+  Eine Lösung des Anfangswertproblems erfüllt
+  \begin{displaymath}
+    \int_0^x \frac{y'(t) \cos(y(t))}{\sin(y(t))} \diff t = \int_0^x 12t^2(1 - t) \diff t = 4x^3 - 3x^4 
+  \end{displaymath}
+  sowie
+  \begin{align*}
+    \int_0^x \frac{y'(t) \cos(y(t))}{\sin(y(t))} \diff t &= \int_{\frac{\pi}{4}}^{y(x)} \frac{\cos(s)}{\sin(s)} \diff s\\
+    &= [\log(|\sin(s)|)]_{\frac{\pi}{4}}^{y(x)}\\
+    &= \log(|\sin(y(x))|) - \log\left(\frac{1}{\sqrt{2}}\right).
+  \end{align*}
+  Es folgt $|\sin(y(x))| = \frac{1}{\sqrt{2}} e^{4x^3 - 3x^4}$ und damit wegen $0 < y(0) < \pi$
+  \begin{displaymath}
+    y(x) = \arcsin\left(\frac{1}{\sqrt{2}}e^{4x^3 - 3x^4}\right), \quad (-\varepsilon < x < \varepsilon)
+  \end{displaymath}
+  für ein $\varepsilon > 0$ hinreichend klein.
+\end{enumerate}
+
+\subsection{Wahr oder Falsch?}
+Das Anfangswertproblem $y'(x) = Ay(x)$, $y(0) = y_0$ ist für alle $A \in \mathbb{R}^{n \times n}$ und alle $y_0 \in \mathbb{R}^n$ auf $\mathbb{R}$ eindeutig lösbar.\\
+Wahr.
+
+Seien $\alpha, s \in C(\mathbb{R})$.
+Dann hat die lineare Differentialgleichung $y'(x) = \alpha(x)y(x) + s(x)$, $(x \in \mathbb{R})$ genau eine Lösung.\\
+Falsch.
+
+\subsection{Beziehungen}
+Es sei $\alpha \in C^1(\mathbb{R}, \mathbb{R})$ und es gelte $y'(x) = \alpha(x) y(x)$ $(x \in \mathbb{R})$.
+\begin{displaymath}
+  \exists x_0 \in \mathbb{R} : y(x_0) = 0.
+  \quad \fbox{\rule{1in}{0pt}\rule[-0.5ex]{0pt}{4ex}} \quad
+  y(x) = 0 \quad (x \in \mathbb{R}).
+\end{displaymath}
+Antwort: $\iff$

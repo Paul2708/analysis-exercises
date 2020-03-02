@@ -1,0 +1,97 @@
+\section{Potenzreihen}
+\subsection{Konvergenzradius}
+\begin{displaymath}
+  \sum_{n = 1}^{\infty} \frac{(n!)^2}{(2n)!}x^n \implies r = 4
+\end{displaymath}
+Idee: Quotientenkriterium, Fakultät kürzen
+
+\begin{displaymath}
+  \sum_{n = 1}^{\infty} \left(1 - \frac{1}{n}\right)^{n^2} x^{8n} \implies r = \sqrt[8]{e}
+\end{displaymath}
+Idee: Wurzel-Kriterium für Reihen
+
+\begin{displaymath}
+  \sum_{n = 1}^{\infty} \left(1 - \frac{1}{n}\right)^{n^2}x^n \implies r = e
+\end{displaymath}
+Idee: Wurzelkriterium für Reihen
+
+\begin{displaymath}
+  \sum_{n = 1}^{\infty} \frac{n^n}{n!} (x-1)^n \implies r = e^{-1}
+\end{displaymath}
+Idee: Quotientenkriterium für Potenzreihen und invertieren
+
+\begin{displaymath}
+  \sum_{n = 0}^{\infty} (-1)^n \frac{n!}{2^{n!}} x^n \implies r = \infty
+\end{displaymath}
+Idee: Quotientenkriterium für Potenreihen
+
+\begin{displaymath}
+  \sum_{n = 1}^{\infty} \left(1 + \frac{2}{n}\right)^{n^2} x^n \implies r = e^{-2}
+\end{displaymath}
+Idee: Definition Konvergenzradius
+
+\subsection{Konvergenzbereich}
+\begin{displaymath}
+  \sum_{n = 1}^{\infty} \frac{(-1)^n(2x+1)^n}{n} \text{ konvergiert } \iff x \in (-1, 0]
+\end{displaymath}
+Idee: Wurzelkriterium für Reihen, Ränder checken (Leibniz-Kriterium und harmonische Reihe)
+
+\begin{displaymath}
+  \sum_{n = 1}^{\infty} \left(1+\frac{1}{2}+\dots+\frac{1}{n}\right)x^n \text{ konvergiert } \iff |x| < 1
+\end{displaymath}
+Idee: Konvergenzradius über Sandwich-Theorem ($1 \leq a_n \leq n$), Ränder checken (keine Nullfolgen)
+
+\begin{displaymath}
+  \sum_{n = 1}^{\infty} \frac{1}{\sqrt{n}} x^n \text{ konvergiert. } \iff x \in [-1, 1)
+\end{displaymath}
+Idee: Konvergenzradius bestimmen ($\sqrt{n}$ mit Sandwich), Ränder checken (Minorantenkriterium und Leibniz-Kriterium)
+
+\begin{displaymath}
+  \sum_{n = 1}^{\infty} \frac{1}{n!} (x+3)^{2n} \text{ konvergiert } \iff x \in (-\infty, \infty)
+\end{displaymath}
+Idee: Quotientenkriterium für Reihen
+
+\begin{displaymath}
+  \sum_{n = 1}^{\infty} \frac{2n}{4+n^3}(x+1)^{2n} \text{ konvergiert } \iff x \in [-2, 0]
+\end{displaymath}
+Idee: Substituiere $y := (x+1)^n$ und erhalte $\sum_{n = 1}^{\infty} \frac{2n}{4 + n^3}y^n$, Ränder checken (Majoranten-Kriterium)
+
+\begin{displaymath}
+  \sum_{n = 1}^{\infty} \frac{(-1)^n}{5n} x^n \text{ konvergiert } \iff x \in (-1, 1]
+\end{displaymath}
+Idee: Quotientenkriterium für Potenzreihen, Ränder checken (Leibniz, Minoranten-Kriterium)
+
+\begin{displaymath}
+  \sum_{k = 1}^{\infty} \frac{1}{\left(1 + \frac{1}{k}\right)^k} x^k \text{ konvergiert } \iff x \in (-1,1)
+\end{displaymath}
+Idee: Konvergenzradius bestimmen (Def. oder WK für Reihen), Ränder checken (keine Nullfolgen)
+
+\begin{displaymath}
+  \sum_{n = 1}^{\infty} \frac{x^n}{(2n)!} \text{ konvergiert } \iff x \in (-\infty, \infty)
+\end{displaymath}
+Idee: Quotientenkriterium für Potenzreihen
+
+\begin{displaymath}
+  \sum_{n = 1}^{\infty} \left(\frac{1}{2} + \frac{1}{2n}\right)^n x^n \text{ konvergiert } \iff x \in (-2,2)
+\end{displaymath}
+Idee: Konvergenzradius bestimmen, Ränder checken (keine Nullfolge)
+
+\begin{displaymath}
+  \sum_{n = 1}^{\infty} \frac{(x+1)^n}{3^n} \text{ konvergiert } \iff x \in (-4, 2)
+\end{displaymath} 
+Idee: WK für Reihen, Ränder checken (Divergenz)
+
+\begin{displaymath}
+  \sum_{n = 1}^{\infty} \frac{(-1)^n x^{2n}}{3n+1} \text{ konvergiert } \iff x \in [-1,1] \text{ oder (-1,1] idk}
+\end{displaymath}
+Idee: Substituieren (?)
+
+\begin{displaymath}
+  \sum_{n = 1}^{\infty} (\sqrt{n^2-3n} - n) x^n \text{ konvergiert } \iff x \in (-1,1)
+\end{displaymath}
+Idee: Fallunterscheidung: Für $x \geq 1$ ist es keine Nullfolge. Für $x < 1$: Aus der Konvergenz folgt die Beschränktheit. Mit dem Sandwichkriterium (geometrische Reihe) divergiert es.
+
+\begin{displaymath}
+  \sum_{n = 1}^{\infty} \left(\frac{1}{3} + \frac{1}{2n}\right)^{n^3} x^{2n} \text{ konvergiert } \iff \text{ ???}
+\end{displaymath}
+Idee: ???

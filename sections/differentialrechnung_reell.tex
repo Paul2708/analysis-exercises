@@ -1,0 +1,325 @@
+\section{Differentialrechnung im $\mathbb{R}^n$ (reellwertige Funktionen)}
+\subsection{Extremum}
+Es sei $f : \mathbb{R}^2 \to \mathbb{R}, f(x,y) = -x^2 + 2x + y^2$.
+Zeigen Sie, dass $f$ kein lokales Extremum hat.\\
+Lösung:
+Nehme an, dass $f$ ein Extremum besitzt.
+Mit der notwendigen Bedingung folgt, dass es in $(1,0)$ sein muss.
+Die Hesse-Matrix ist allerdings indefinit, also gibt es keine Extrema.
+
+Sei $f : \mathbb{R}^2 \to \mathbb{R}$ definiert durch
+\begin{displaymath}
+  f(x,y) = 3x(1 - y^2) + \frac{3}{2}x^2.
+\end{displaymath}
+Bestimmen Sie alle lokalen Extremstellen von $f$.
+Besitzt $f$ ein globales Minimum?
+Begründen Sie.\\
+Lösung:
+Fallunterscheidung für die kritischen Stellen, Hesse-Matrix auswerten (nur eine ist positiv definit, also Minimum).\\
+Es existiert kein globales Minumum, da $f(1,y) \to -\infty \quad (y \to \infty)$.
+
+Sei $D := \{(x,y) \in \mathbb{R}^2 : x^2 + y^2 \leq 4\}$ und $f : D \to \mathbb{R}$ definiert durch
+\begin{displaymath}
+  f(x,y) := (x - 3)^2 + y^2.
+\end{displaymath}
+Bestimmen Sie $\min f(D)$ sowie $\max f(D)$ (mit Beweis).\\
+Lösung:
+$D$ abgeschlossen und beschränkt, also kompakt und $f$ ist stetig auf $D \implies \min f(D)$ und $\max f(D)$ existiert.
+Da es in $D$ keine kritischen Stellen gibt, Randbetrachtung über Polarkoordinaten $x = 2 \cos \phi, \quad y = 2 \sin \phi$ mit $g(\phi) := f(x,y)$.
+Nullstellen von $g$ betrachten ($0$, $\pi$) und in $g$ einsetzen.
+Das entspricht $\min f(D)$ bzw. $\max f(D)$.
+
+Bestimmen Sie alle stationären Punkte der Funktion $f : \mathbb{R}^2 \to \mathbb{R}$,
+\begin{displaymath}
+  f(x,y) = (y^2 - 1) \sin(x)
+\end{displaymath}
+Hat $f$ ein globales Maximum oder ein globales Minimum?\\
+Lösung:
+Mit einer Fallunterscheidung folgen die stationären Punkte
+\begin{displaymath}
+  \left(\frac{\pi}{2}\left(2k + 1\right), 0\right), (nk, \pm 1) \quad (k \in \mathbb{Z})
+\end{displaymath}
+$f$ hat weder Minimum noch Maximum, denn
+\begin{align*}
+  f\left(\frac{\pi}{2}, y\right) &= y^2 - 1 \to \infty &\quad (y \to \infty)\\
+  f\left(-\frac{\pi}{2}, y\right) &= -(y^2 - 1) \to -\infty &\quad (y \to \infty)
+\end{align*}
+
+Berechnen Sie das globale Minimum und das globale Maximu der Funktion $f : \{(x,y) \in \mathbb{R}^2 : x,y \geq 0, x + y \leq 1\} \to \mathbb{R}$, $f(x,y) = (x-y)e^{x+y}$.\\
+Lösung:
+Sei $M := \{(x,y) \in \mathbb{R}^2 : x,y \geq 0, x + y \leq 1\}$.
+Da $M$ abgeschlossen und beschärnkt also kompakt, $f$ stetig ist, muss $f$ sein Minimum und Maximum auf $M$ annehmen.
+$f$ ist in der offenen Menge (ohne Rand) offenbar differenzierbar.
+Allerdiengs hat der Gradient keine Nullstellen.
+Also muss $f$ Minimum und Maximum auf dem Rand annehmen.
+Die Ränder ergeben für $x,y \in [0,1]$
+\begin{align*}
+  f(0,y) =& -ye^y \in [-e,0],\\
+  f(x,0) =& xe^x \in [0,e]\\
+  f(x,1-x) =& (2x - 1)e \in [-e,e]
+\end{align*}
+Aufgrund von $f(0,1) ) -e$ und $f(1,0) = e$ ergibt sich das globale Minimum bzw. globale Maximum von $f$.
+
+Es sei $f : \mathbb{R}^2 \to \mathbb{R}$, $f(x,y) = x^2 + xy + y^2 -3x -3y$.
+Zeigen Sie, dass $f$ genau ein lokales Extremum hat, berechnen Sie dieses und geben Sie dessen Art an.\\
+Weiter sei $M := \{(x,y) \in \mathbb{R}^2 : x^2 + y^2 < 10\}$.
+Werden $\sup f(M)$ und $\inf f(M)$ in $M$ angenommen?
+Beweisen Sie Ihre Aussagen.\\
+Lösung:
+Kritische Stelle mit Gradienten bestimmen $(1,1)$.
+Hessematrix ist positiv definit (nur EW größer null).
+Damit folgt ein lokales Minimum.\\
+Da $1^2 + 1^2 = 2 < 10$ und $f(x,y) \to \infty$ für $(x,y) \to \infty$, wird $\inf f(M)$ angenommen.
+Angenommen $\sup f(M)$ wird angenommen.
+Dann gibt es eine Umgebung $U \subset M$ (da $M$ offen) mit $f(x,y) \geq f(z,w)$ mit $(z,w) \in U$.
+Damit wäre $(x,y)$ ein lokales Maximum mit $f'(x,y) = 0$.
+Also ist $(x,y) = (1,1)$ und damit $f$ konstant auf $M$.
+Widerspruch.
+
+Sei $A := [0,1] \times [0,1]$ und sei $f : A \to \mathbb{R}$ gegeben durch
+\begin{displaymath}
+  f(x,y) = e^x - xy - y^2.
+\end{displaymath}
+Bestimmen Sie (mit Beweis) $\max_{(x,y) \in A} f(x,y)$ und $\min_{(x,y) \in A} f(x,y)$.\\
+Lösung:
+Da $f$ stetig und $A$ kompakt, wird Minimum und Maximum angenommen.
+Es gibt keine lokalen Extrema, also wird Min/Max auf dem Rand angenommen.
+$\partial A = ([0,1] \times \{0\}) \cup (\{1\} \times [0,1]) \cup ([0,1] \times \{1\}) \cup (\{0\} \times [0,1])$.
+Nach Auswertung des Rands (8 Fälle) ergibt sich $\max f(x,y) = e$ und $\min f(x,y) = 0$.
+
+Untersuchen Sie die Funktion $f : \mathbb{R}^2 \to \mathbb{R}$,
+\begin{displaymath}
+  f(x,y) = x^2 - 2x + y^3 - 3y \quad ((x,y) \in \mathbb{R}^2),
+\end{displaymath}
+auf lokale und globale Extrema.\\
+Lösung:
+$f$ besitzt keine globalen Extrema, denn $f(0,y) \to +\infty$ für $y \to +\infty$ und $f(0,y) \to -\infty$ für $y \to -\infty$.
+Für den stationären Punkt $(1,1)$ ist die Hessematrix positiv definit, also liegt ein lokales Minimum vor.
+Für $(1,-1)$ ist die Hessemtraix indefinit, also liegt kein Extremum vor.
+
+Sei $f : \mathbb{R}^2 \to \mathbb{R}$, $f(x,y) = 2x^3 - 3xy + 2y^3 - 3$.
+Bestimmen Sie
+\begin{itemize}
+    \item $\grad f(x,y) = (6x^2 - 3y, -3x + 6y^2)$
+    \item $\grad f(x,y) = 0 \iff (x,y) \in \{(0,0), \left(\frac{1}{2}, \frac{1}{2}\right)\}$
+    \item Die Hessematrix von $f$ ist $H_f(x,y) = \begin{pmatrix} 12x & -3\\-3 & 12y\end{pmatrix}$
+    \item $f$ hat in $(x,y)$ ein lokales Minimum $\iff (x,y) = \left(\frac{1}{2}, \frac{1}{2}\right)$
+\end{itemize}
+
+Seien
+\begin{displaymath}
+  K := \{(x,y) \in \mathbb{R}^2 : x\in [0,10], 0 \leq 10 - x\}
+\end{displaymath}
+und
+\begin{displaymath}
+  f : K \to \mathbb{R}, \quad f(x,y) := - \frac{1}{x + 1} + y^2 - 2 + 20x.
+\end{displaymath}
+Bestimmen Sie das globale Maximum und Minimum der Funktion $f$ sowie alle Punkte, in denen diese angenommen werden.\\
+Lösung:
+$f(0,0) = -3$ lokales Minimum und $f(10,0) = 197 \frac{10}{11}$ globales Maximum
+(September 2015)
+
+\subsection{Beziehungen}
+Es sei $D \subseteq \mathbb{R}^n$ offen und $f : D \to \mathbb{R}$ differenzierbar auf D.
+\begin{displaymath}
+  f'(x) = 0 \quad (x \in D). \quad \fbox{\rule{1in}{0pt}\rule[-0.5ex]{0pt}{4ex}} \quad f \text{ ist auf } D \text{ konstant}.
+\end{displaymath}
+Antwort: $\Leftarrow$
+
+Es sei $f \in C(\mathbb{R}^2, \mathbb{R})$.
+\begin{displaymath}
+  H_f(x_0) \text{ ist positiv definit.} \quad \fbox{\rule{1in}{0pt}\rule[-0.5ex]{0pt}{4ex}} \quad f \text{ hat in } x_0 \text{ ein lokales Minimum.}
+\end{displaymath}
+Antwort: keine Beziehung
+
+Es sei $D \subseteq \mathbb{R}^n$ offen und $f : D \to \mathbb{R}$.
+\begin{align*}
+  \text{Für jedes } x \in D \text{ existiert ein } a \in \mathbb{R}^n \text{, sodass gilt: }&\\
+  \frac{|f(x + h) - f(x) - a^T \cdot h|}{||h||} \to 0 \quad (||h|| \to 0)& \quad \fbox{\rule{1in}{0pt}\rule[-0.5ex]{0pt}{4ex}} \quad f \text{ ist stetig partiell differenzierbar.}
+\end{align*}
+Antwort: $\Leftarrow$
+
+Es sei $f : \mathbb{R}^2 \to \mathbb{R}$.
+\begin{displaymath}
+  f \text{ ist stetig in } (0,0).
+  \quad \fbox{\rule{1in}{0pt}\rule[-0.5ex]{0pt}{4ex}} \quad
+  f \text{ istt partiell differenzierbar in } (0,0).
+\end{displaymath}
+Antwort: keine Beziehung
+
+\subsection{Richtungsableitung}
+Es sei $f : \mathbb{R}^2 \to \mathbb{R}, f(x,y) := x^4 y^4$, $a := \frac{1}{\sqrt{10}}(-3,1) \in \mathbb{R}^2$, dann gilt:
+\begin{displaymath}
+  \frac{\partial f}{\partial a} \left(2,1\right) = f'(2,1) \cdot a = -\frac{32}{\sqrt{10}}.
+\end{displaymath}
+
+Sei $f : (0,\infty)^3 \to \mathbb{R}$, $f(x,y,z) := x^y + z$.
+Sei $a = \frac{1}{\sqrt{2}}(1, 0, -1)$.
+Dann gilt:
+\begin{align*}
+  \grad f(x,y,z) &= (yx^{y - 1}, x^y \cdot \log x, 1)\\
+  \frac{\partial f}{\partial a} (1,1,1) &= 0
+\end{align*}
+
+Sei $f : \mathbb{R}^2 \to \mathbb{R}$ gegeben durch $(x,y) \mapsto e^x + y$.
+Geben Sie die Richtungsableitung $\frac{\partial f}{\partial a}(0,0)$ für $a = \frac{1}{\sqrt{2}} (1,1)$.
+\begin{displaymath}
+  \frac{\partial f}{\partial a} (0,0) = \sqrt{2}
+\end{displaymath}
+
+Es sei $f : \mathbb{R}^2 \to \mathbb{R}$, $f(x,y) = x^2y^3$, $a := \left(\frac{3}{5}, -\frac{4}{5}\right)$.
+\begin{displaymath}
+  \frac{\partial f}{\partial a}(x,y) = \frac{6}{5}xy^3 - \frac{12}{5}x^2y^2
+\end{displaymath}
+
+Es sei $f : \mathbb{R}^2 \to \mathbb{R}$, $f(x,y) := xy^2$, $a := \left(\frac{1}{\sqrt{2}, \frac{1}{\sqrt{2}}}\right) \in \mathbb{R}^2$, dann gilt
+\begin{displaymath}
+  \frac{\partial f}{\partial a}(1, -1) = -\frac{1}{\sqrt{2}}
+\end{displaymath}
+
+\subsection{Wahr oder Falsch?}
+Ist $f : \mathbb{R}^n \to \mathbb{R}$ in $x_0 \in \mathbb{R}^n$ stetig, so ist auch $f$ in $x_0$ stetig partiell differenzierbar.\\
+Falsch.
+
+Ist $f : \mathbb{R}^n \to \mathbb{R}$ in $x_0 \in \mathbb{R}^n$ differenzierbar und hat $f$ in $x_0$ ein lokales Maximum, so gilt $\grad f(x_0) = 0$.\\
+Wahr.
+
+Seien $f : \mathbb{R}^n \to \mathbb{R}$ und $v_1, \dots, v_n$ linear unabhängige Richtungsvektoren.
+$\frac{\partial f}{\partial v_i}(x)$ existiere für  alle $x$ in einer Umgebung von $x_0 \in \mathbb{R}^n$ und sei dort stetig.
+Dann ist $f$ in $x_0$ differenzierbar.\\
+Wahr.
+
+Sei $f : \mathbb{R}^n \to \mathbb{R}$ zweimal partiell differenzierbar.
+Dann ist die Hessematrix $H_f(x)$ in jedem $x \in \mathbb{R}^n$ symmetrisch.\\
+Falsch.
+
+Sei $\emptyset \neq D \subseteq \mathbb{R}^n$ offen und konvex und $f : D \to \mathbb{R}$ differenzierbar.
+Es existiere ein $C > 0$ mit $|| f'(x) || \leq C$ für alle $x \in D$.
+Dann ist $f$ Lipschitz-stetig auf $D$.\\
+Wahr.
+
+Sei $f$ für die folgenden 4 Aufgaben $f : \mathbb{R}^2 \to \mathbb{R}$.
+
+Falls $f$ zweimal stetig differenzierbar ist, so gilt
+\begin{displaymath}
+  \frac{\partial^2 f}{\partial x \partial y}(x,y) - \frac{\partial^2 f}{\partial y \partial x}(x,y) = 0 \quad ((x,y) \in \mathbb{R}^2).
+\end{displaymath}
+Wahr.
+
+Ist $f$ in $(0,0)$ differenzierbar, so gilt
+\begin{displaymath}
+  \frac{f(h_1, h_2) - f(0,0) - (h_1,h_2) \cdot \grad f(0,0)}{||(h_1, h_2)||} \to 0, \quad \text{falls } ||(h_1, h_2)|| \to 0.
+\end{displaymath}
+Wahr.
+
+Gilt
+\begin{displaymath}
+  \lim_{(h_1, h_2) \to (0,0)} \frac{f(h_1, h_2) - f(0,0) - (h_1,h_2) \cdot \grad f(0,0)}{||(h_1, h_2)||} = 0,
+\end{displaymath}
+so ist $f$ in $(0,0)$ differenzierbar.\\
+Wahr.
+
+Ist für jedes festes $x\in \mathbb{R}$ die Funktion $y \mapsto f(x,y)$ stetig differenzierbar und für jedes festes $y \in \mathbb{R}$ die Funktion $x \mapsto f(x,y)$ stetig differenzierbar, so ist $f$ differenzierbar auf $\mathbb{R}^2$.\\
+Wahr.
+
+Gilt für die Hessenatrix von $f$
+\begin{displaymath}
+  H_f(x) = \begin{pmatrix} 0 & 0 \\ 0 & 0\end{pmatrix},
+\end{displaymath}
+so hat $f$ in $(0,0)$ kein Maximum.\\
+Falsch.
+
+Für $f(x,y) = \frac{x}{1 +y^2} \cos(y)$ gilt $f_{xy}(x,y) = f_{yx}(x,y) \quad ((x,y) \in \mathbb{R}^2)$.\\
+Wahr. (Satz von Schwarz)
+
+Sei $f : \mathbb{R}^n \to \mathbb{R}$ in $x_0$ differenzierbar. $\quad \implies \quad f$ ist in $x_0$ stetig.\\
+Wahr.
+
+Ist $f : \mathbb{R}^n \to \mathbb{R} \text{ } (n \in \mathbb{N})$ differenzierbar, so ist $f$ auch stetig.\\
+Wahr, bekannte Aussage aus der Vorlesung.
+
+Ist $f : \mathbb{R}^n \to \mathbb{R} \text{ } (n \in \mathbb{N}$ mit $n \geq 2)$ partiell differenzierbar, so ist $f$ auch differenzierbar.\\
+Falsch.
+Denn die Funktion
+\begin{displaymath}
+  f : \mathbb{R}^2 \to \mathbb{R}, \quad f(x,y) =
+  \begin{cases}
+    \frac{xy^2}{x^2+y^4},& \text{ falls } (x,y) \neq (0,0)\\
+    0,& \text{ falls } (x,y) = (0,0)
+  \end{cases}
+\end{displaymath}
+ist überall partiell differenzierbar, aber in $(0,0)$ nicht stetig.
+
+Ist $f : \mathbb{R}^2 \to \mathbb{R}$ eine zweimal partiell differenzierbare Funktion, so gilt
+\begin{displaymath}
+  \frac{\partial^2 f}{\partial x \partial y} = \frac{\partial^2 f}{\partial y \partial x}.
+\end{displaymath}
+Falsch.
+Denn die Funktion
+\begin{displaymath}
+  f : \mathbb{R}^2 \to \mathbb{R}, \quad (x,y) \mapsto
+  \begin{cases}
+    \frac{xy(x^2 - y^2)}{x^2 + y^2},& \text{ falls } (x,y) \neq (0,0),\\
+    0,& \text{ falls } (x,y) = (0,0),
+  \end{cases}
+\end{displaymath}
+ist in allen Punkten zweimal partiell differenzierbar, aber $\frac{\partial^2 f}{\partial x \partial y}(0,0) \neq \frac{\partial^2 f}{\partial y \partial x}(0,0)$.
+
+Sei $f \in C^1(\mathbb{R}^n, \mathbb{R})$ und $a \in \mathbb{R}^n$, $||a|| = 1$.
+Dann berechnet sich die Richtungsableitung $\frac{\partial f}{\partial a}$ gemäß der Formel $\frac{\partial f}{\partial a} = f'(x) \cdot a$.\\
+Wahr.
+
+Ist $f \in C^2(\mathbb{R}^n, \mathbb{R})$ und besitzt $f$ in $x_0$ ein lokales Minimum, so ist die Hesse-Matrix $H_f(x)$ positiv definit.\\
+Falsch.
+
+Sei $f : \mathbb{R}^2 \to \mathbb{R}$, $f(x,y) = \frac{xy^2}{x^2 + y^4}$, falls $(x,y) \neq 0$ und $f(0,0) = 0$.
+Dann gilt für $a = \frac{1}{\sqrt{2}}(1,1)$:
+\begin{displaymath}
+  \grad f(0,0) \cdot a = \frac{\partial f}{\partial a}(0,0).
+\end{displaymath}
+Falsch.
+
+Eine Funktion $f : \mathbb{R}^n \to \mathbb{R}$ ist in $x_0$ differenzierbar genau dann, wenn es ein $a \in \mathbb{R}^n$ gibt, so dass der Grenzwert
+\begin{displaymath}
+  \lim_{h \to 0} \frac{f(x_0 + h) - f(x_0) - a \cdot h}{||h||}
+\end{displaymath}
+exisitert.\\
+Falsch.
+
+Sei $f : \mathbb{R}^n \to \mathbb{R}$ $(n \in \mathbb{N})$ zweimal stetig differenzierbar.
+Ist die Hesse-Matrix von $f$ im Punkt $x \in \mathbb{R}^n$ nicht invertierbar, so liegt in $x$ weder ein Maximum noch ein Minimum von $f$ vor.\\
+Falsch.
+
+Sei $f : \mathbb{R}^n \to \mathbb{R}$ $(n \in \mathbb{N})$ partiell differenzierbar und alle partiellen Ableitungen sind stetig.
+Dann ist $f$ differenzierbar.\\
+Wahr.
+
+\subsection{Ableitungen}
+Existiert die Ableitung $f'(0,0)$ für
+\begin{displaymath}
+  f : \mathbb{R}^2 \to \mathbb{R} \text{ mit } f(x,y) = ||(x,y)|| \quad ((x,y) \in \mathbb{R}^2)
+\end{displaymath}
+Nein, denn aus der Ableitung der ersten Variablen folgt
+\begin{displaymath}
+  \frac{1}{h} \cdot (f(h, 0) - f(0,0)) = \frac{|h|}{h}
+\end{displaymath}
+und der Grenzwert $\lim_{h \to 0} \frac{|h|}{h}$ ist nicht eindeutig.
+
+Existiert die Ableitung $f'(0,0$ für
+\begin{displaymath}
+  f : \mathbb{R}^2 \to \mathbb{R}, \quad f(x,y) :=
+  \begin{cases}
+    (x^2 + y^2) \sin\left(\frac{1}{\sqrt{x^2 + y^2}}\right),& \text{ falls } (x,y) \neq (0,0),\\
+    0,& \text{ falls } (x,y) = (0,0).
+  \end{cases}
+\end{displaymath}
+Für die partielle Ableitung im Punkt $(0,0)$ nach $x$ ergibt sich
+\begin{displaymath}
+  f_x(0,0) = \lim_{t \to 0} \frac{f(t,0) - f(0,0)}{t} = \lim_{t \to 0} \frac{t^2 \sin(|t|^{-1)} - 0}{t} = \lim_{t \to 0} t \sin(|t|^{-1}) = 0.
+\end{displaymath}
+Aus Symmetriegründen gilt $f_y(0,0) = f_x(0,0)$, also $\grad f(0,0) = (0,0)$.
+Wegen $f(0,0) = 0$ und $\grad f(0,0) \cdot (h_1, h_2) = 0$ für $(h_1, h_2) \in \mathbb{R}^2$ gilt
+\begin{displaymath}
+  \frac{f(h_1, h_2) - f(0,0) - \grad f(0,0) \cdot (h_1, h_2)}{||(h_1, h_2)||} = ||(h_1, h_2)|| \sin \frac{1}{||(h_1, h_2)||} \to 0 \quad (h_1, h_2) \to 0.
+\end{displaymath}
+Somit ist f auch differenzierbar in $(0,0)$ mit $f'(0,0) = (0,0)$.
