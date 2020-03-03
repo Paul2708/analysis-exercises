@@ -1,0 +1,16 @@
+name: Verify build
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout project
+      uses: actions/checkout@v2
+    - name: Compile LaTeX
+      uses: dante-ev/latex-action@v0.2.0
+      with:
+        root_file: main.tex
+        working_directory: .
+        args: -synctex=1 -shell-escape -interaction=nonstopmode --aux-directory=build
