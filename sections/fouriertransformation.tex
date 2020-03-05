@@ -1,0 +1,32 @@
+\section{Fouriertransformation}
+
+\subsection{Verschiedenes}
+Es sei $f : \mathbb{R} \to \mathbb{R}$ mit
+\begin{displaymath}
+  f(t) = 
+  \begin{cases}
+    t^3,& -1 \leq t \leq 2\\
+    0,& \text{sonst}
+  \end{cases}    
+\end{displaymath}
+und $\hat{f}$ bezeichne ihre Fouriertransformierte. 
+Dann gilt
+\begin{displaymath}
+  CH - \int_{-\infty}^{\infty} \hat{f}(s) e^{ist} \diff s = 
+  \begin{cases}
+    0,& t < -1,\\
+    -\frac{1}{2},& t = -1,\\
+    t^3,& -1 < t < 2,\\
+    4,& t = 2,\\
+    0,& t > 2.\\
+  \end{cases}
+\end{displaymath}
+
+\subsection{Beziehungen}
+Es sei $f : \mathbb{R} \to \mathbb{R}$.
+\begin{displaymath}
+  CH - \int_{-\infty}^{\infty} f(x) \diff x \text{ existiert. }
+  \quad \fbox{\rule{1in}{0pt}\rule[-0.5ex]{0pt}{4ex}} \quad
+  f \text{ ist uneigentlich Riemann-integrierbar.}
+\end{displaymath}
+Antwort: $\Leftarrow$
