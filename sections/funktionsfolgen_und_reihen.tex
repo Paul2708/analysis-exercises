@@ -53,6 +53,35 @@ auf punktweise und gleichmäßige Konvergenz.\\
 Idee: Stetigkeit des Kosinus, betrachte $x_n = \frac{\pi n}{2}$\\
 Lösung: $f(x) = 0$ und nicht gleichmäßig Konvergenz.
 
+Für $t > 0$ sei $g_t : \mathbb{R} \to \mathbb{R}$ mit
+\begin{displaymath}
+  g_t(x) := \frac{\sqrt{t}}{\pi} \cdot \frac{1}{1 + tx2}.
+\end{displaymath}
+\begin{enumerate}
+  \item Konvergiert die Funktionsfolge $\left(g_{\frac{1}{n}}\right)_{n \in \mathbb{N}}$ punktweise und/oder gleichmäßig?
+  Bestimme die Grenzfunktion (falls vorhanden).
+  \item Konvergiert die Funktionsfolge $\left(g_n\right)_{n \in \mathbb{N}}$ punktweise und/oder gleichmäßig?
+  Bestimme die Grenzfunktion (falls vorhanden).
+\end{enumerate}
+
+Lösung:
+\begin{enumerate}
+  \item Sei $f := 0$.
+  Dann gilt
+  \begin{displaymath}
+    |g_{\frac{1}{n}} - f| \leq \frac{1}{\pi} \cdot \frac{1}{\sqrt{n}} \cdot \frac{1}{1 + 0} \to 0 \quad (n \to \infty).
+  \end{displaymath}
+  Die Abschätzung ist unabhängig von $x$, also liegt gleichmäßige Konvergenz gegen $f$ vor.
+  Mit der gleichmäßigen Konvergenz folgt die punktweise Konvergenz.
+  
+  \item Betrachte $x = 0$.
+  \begin{displaymath}
+    g_n(0) = \frac{\sqrt{n}}{\pi} \cdot \frac{1}{1 + n \cdot 0} = \frac{1}{\pi} \cdot \sqrt{n} \to \infty \quad (n \to \infty),
+  \end{displaymath}
+  also liegt keine punktweise Konvergenz vor.
+  Damit auch keine gleichmäßige Konvergenz.
+\end{enumerate}
+
 \subsection{Wahr oder Falsch?}
 Für alle $n \in \mathbb{N}$ seien $f_n : [0, \infty) \to \mathbb{R}$ stetige Funktionen und es gelte $f_n \xrightarrow{n \to \infty} f$ gleichmäßig auf $[0,\infty)$. Dann ist $f$ stetig.\\
 Wahr.\\
