@@ -30,6 +30,11 @@ Idee: Häufungswerte bestimmen oder Limes reinziehen
 \end{displaymath}
 Idee: 3. Binomische Formel und Grenzwertsatz benutzen
 
+\begin{displaymath}
+  \lim_{n \to \infty} \sqrt[n]{a^n + b^n} = \max\{a, b\} \quad (a,b > 0)
+\end{displaymath}
+Hinweis: Sandwich-Lemma
+
 \subsection{Rekursive Folgen}
 Sei $a_1 := \frac{3}{2}$ und $a_{n+1} = \frac{3}{4-a_n}$.
 \begin{enumerate}
@@ -87,6 +92,15 @@ Antwort:
         \item Mit $|a| < 1$ folgt die Behauptung.
     \end{enumerate}
 \end{enumerate}
+
+Sei $a_1 \in [0, \infty)$, $a_{n + 1} = 1 + \frac{a_n^2}{4}$ $(n \in \mathbb{N})$.
+Dann gilt:
+\begin{displaymath}
+  \lim_{n \to \infty} a_n = 2 \iff a_1 \in [0,2]
+\end{displaymath}
+Idee: Die Folge ist monoton wachsend (unabhängig von $a_1$).
+Falls $a_1 \in [0,2]$, dann ist $a_n$ beschränkt.
+Damit folgt die Konvergenz.
 
 \subsection{Wahr oder falsch?}
 Besitzt eine Folge reeller Zahlen genau einen Häufungspunkt in $\mathbb{R}$, so ist diese Folge konvergent.\\

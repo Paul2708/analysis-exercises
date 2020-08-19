@@ -40,6 +40,13 @@ Zeigen Sie mithilfe des Mittelwertsatzes
 \end{displaymath}
 Idee: MWS mit $f(t) = \sqrt{t}$ auf dem Intervall $(x, x+1)$
 
+Sei $f : \mathbb{R} \to \mathbb{R}$ mit $f(x) := \arctan(\arctan(x))$.
+Zeigen Sie, dass
+\begin{displaymath}
+  \forall x,y \in [1,\infty) : |f(x) - f(y)| \leq \frac{8}{16 + \pi^2} \cdot |x-y|.
+\end{displaymath}
+Idee: MWS 
+
 \subsection{Ableitungen}
 Sei $f(x) = x^x$ für $x \in (0,\infty)$.
 Bestimmen Sie $f'(e)$.\\
@@ -56,6 +63,21 @@ Lösung: $f'(-1) = e^{-\sqrt{2}}\left(\frac{1}{\sqrt{2}} - 1\right)$
 Die Funktion $f:(0,\infty) \to \mathbb{R}$ sei gegeben durch $f(x) := x^{(x^2)}$.
 Berechnen Sie für $x > 0$ die Ableitung $f'(x)$.\\
 Lösung: $f'(x) = x^{(x^2 + 1)} (2\log(x) + 1)$
+
+Zeigen Sie, dass $f : \mathbb{R} \to \mathbb{R}$ mit $f(x) := \arctan(\arctan(x))$ streng monoton ist.\\
+Lösung:
+Die Ableitung muss dafür strikt größer/kleiner 0 sein.
+\begin{displaymath}
+  f'(x) = \frac{1}{1 + \arctan^2(x)} \cdot \frac{1}{1 + x^2} \geq \frac{1}{1 + 0} \cdot \frac{1}{1 + 0} = 1  > 0.
+\end{displaymath}
+
+Sei $f : \mathbb{R} \to \mathbb{R}$ mit $f(x) := \arctan(\arctan(x))$.
+Berechnen Sie $(f^{-1})'(0)$.\\
+Lösung:
+Da $f$ streng monoton ist, gilt mit dem Umkehrsatz
+\begin{displaymath}
+  (f^{-1})'(0) = \frac{1}{f'(f^{-1}(0))} = \frac{1}{f'(0)} = (1 + \arctan^2(0)) \cdot (1 + 0^2) = 1.
+\end{displaymath}
 
 \subsection{Differenzierbarkeit prüfen}
 Untersuchen Sie die Funktion

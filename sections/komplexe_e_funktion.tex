@@ -8,3 +8,14 @@ Lösung: Nein, denn $e^{i \frac{9\pi}{2}} = i$.
 Geben Sie alle Wurzeln aus $-12 + 16i$ an, also $\sqrt{-12 + 16i}$.\\
 Idee: $z = x+iy$ mit $z^2 = -12 + 16i$\\
 Lösung: $\pm (2 + 4i)$
+
+Bestimmen Sie den Real- und Imaginärteil von $z := e^{\frac{\pi}{1 + i}}$.\\
+Lösung: Es gilt
+\begin{displaymath}
+  \frac{1}{1 + i} = \frac{1 - i}{2} \quad \text{(3. Binomische Formel)}.
+\end{displaymath}
+Mit der Definition der komplexen Exponentialfunktion folgt daher
+\begin{displaymath}
+  e^{\frac{1}{1 + i} \pi} = e^{\left(\frac{1}{2} - \frac{1}{2}i\right)\pi} = e^{\frac{\pi}{2}}\left(\cos\left(-\frac{\pi}{2}\right) + i \sin\left(-\frac{\pi}{2}\right)\right) = -e^{\frac{\pi}{2} i}.
+\end{displaymath}
+Also $\rpart(z) = 0$ und $\ipart(z) = -e^{\frac{\pi}{2}}$.
